@@ -32,7 +32,7 @@ object InvertedIndexHelper extends App {
   type word_occ_indexes = (String, Int, ArrayBuffer[Int])
   type invertedIndexMap = Map[String, Map[String, (Int, ArrayBuffer[Int])]]
 
-  def buildupInvertedMap(files: Seq[String], f: (word_occ_indexes) => (word_occ_indexes)):invertedIndexMap = {
+  def buildupInvertedMap(files: Seq[String], f: (word_occ_indexes) => (word_occ_indexes)) = {
     // Map of (filePath -> one line of content)
     var fileID = 0
     val fileToContentMap = files.map { filePath =>
@@ -55,7 +55,9 @@ object InvertedIndexHelper extends App {
       (map, file_content) => {
         file_content._2.foreach { word_freq_indexes =>
           //map add an entry which is (word -> entry of (filePath -> (frequency, Array of index)))
-          val indexMapValue = (map.getOrElse(word_freq_indexes._1, Map()) += (file_content._1 -> (word_freq_indexes._2, word_freq_indexes._3)))
+          val indexMapValue = 
+            (map.getOrElse(word_freq_indexes._1, Map()) += 
+              (file_content._1 -> (word_freq_indexes._2, word_freq_indexes._3)))
           map += (word_freq_indexes._1 -> indexMapValue)
         }
         map
