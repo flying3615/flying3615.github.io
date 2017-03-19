@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "simple search engine"
+title: "SearchEngine - My first scala project"
 date: 2017-03-19
 ---
 
-# SearchEngine - My first scala project
 Small file search engine using [inverted index](https://en.wikipedia.org/wiki/Inverted_index), powered by [Slick](http://slick.lightbend.com/ "Funcitonal Relational Mapping") &amp;[Akka](http://akka.io/ "toolkit to build highly concurrent app")&amp;[Scala-Swing](https://github.com/scala/scala-swing)
 Facing to a task that
 
