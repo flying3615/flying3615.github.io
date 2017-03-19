@@ -1,0 +1,6 @@
+---
+layout: post
+title: "Java 8 Functional programing"
+date: 2017-03-20
+---
+<iframe src="//slides.com/flying3615/deck/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
