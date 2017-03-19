@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SearchEngine - My first scala project"
+title: "SearchEngine"
 date: 2017-03-19
 ---
 
