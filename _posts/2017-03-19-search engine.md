@@ -87,7 +87,6 @@ object InvertedIndexHelper extends App {
 
   }
 
-
   private def lineToTuple(line: String): Iterable[(String, Int, ArrayBuffer[Int])] = {
     val ss = Map.empty[String, (String, Int, ArrayBuffer[Int])]
     line.trim.split("\\W+").foreach { word =>
@@ -113,6 +112,7 @@ object InvertedIndexHelper extends App {
   println(buildupInvertedMap(input, Stemming.doStem _).mkString("\n"))
 
 }
+
 {% endhighlight %}
 
 ## Unit test covered by 
