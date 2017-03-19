@@ -1,4 +1,4 @@
-theme: jekyll-theme-tactile
+theme: jekyll-theme-cayman
 name: Gabriel.Liu
 #markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
