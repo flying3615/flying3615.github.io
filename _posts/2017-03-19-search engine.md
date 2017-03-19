@@ -152,7 +152,6 @@ object SearchActorSpec {
 }
 {% endhighlight %}
 
-
 ## Stemming the words by 
 [The Porter Stemming Algorithm](https://tartarus.org/martin/PorterStemmer/)
 
