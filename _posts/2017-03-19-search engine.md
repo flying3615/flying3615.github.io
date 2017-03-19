@@ -29,7 +29,7 @@ entry of inverted index map format like `word -> Map(doc_id -> (occurrences, ind
 ## Core code to build full inverted index as below
 
 
-{% highlight scala %}
+{% highlight %}
 object InvertedIndexHelper extends App {
 
   var filePath2ID = Map[String,String]()
