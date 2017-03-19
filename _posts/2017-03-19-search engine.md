@@ -38,7 +38,7 @@ def show
 end
 {% endhighlight %}
 
-{% highlight javascript linenos %}
+{% highlight scala %}
 object InvertedIndexHelper extends App {
 
   var filePath2ID = Map[String,String]()
