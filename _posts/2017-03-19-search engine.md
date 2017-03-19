@@ -108,7 +108,7 @@ object InvertedIndexHelper extends App {
 ## Unit test covered by 
 [scalaTest](http://www.scalatest.org/) & [akka-testkit](http://doc.akka.io/docs/akka/current/scala/testing.html)
 
-{% highlight scala %}
+<pre class="prettyprint lang-scala">
 class SearchActorSpec extends TestKit(ActorSystem(
   "SearchActorSpec",
   ConfigFactory.parseString(SearchActorSpec.config)))
@@ -149,7 +149,7 @@ object SearchActorSpec {
       |}
     """.stripMargin
 }
-{% endhighlight %}
+</pre>
 
 ## Stemming the words by 
 [The Porter Stemming Algorithm](https://tartarus.org/martin/PorterStemmer/)
