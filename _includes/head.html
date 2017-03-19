@@ -1,14 +1,9 @@
-<head>
-
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>
-        {% if page.title %} {{ page.title }}
-        {% else %} {{ site.title }}
-        {% endif %}
-    </title>
-    <meta name="description" content="{{ site.description }}">
-    <meta name="viewport" content="width=device-width">
-</head>
+<div class="header">
+	<ul class="nav nav-pills pull-right">
+		<li class="{{ page.cv }}"><a href="/cv" title="CV">CV</a></li>
+		<!-- <li class="{{ page.projects }}"><a href="/projects" title="Projects">Projects</a></li> -->
+		<li class="{{ page.notes }}"><a href="/blog" title="Posts">Posts</a></li>
+		<li class="{{ page.contact }}"><a href="/contact" title="Contact">Contact</a></li>
+	</ul>
+	<h3 class="text-muted"><a href="/">Gabriel Liu</a></h3>
+</div> <!-- /header -->
