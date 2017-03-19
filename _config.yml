@@ -2,4 +2,8 @@
 name: Gabriel.Liu
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  syntax_highlighter: rouge
