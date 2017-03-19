@@ -29,7 +29,7 @@ entry of inverted index map format like `word -> Map(doc_id -> (occurrences, ind
 ## Core code to build full inverted index as below
 
 
-{% highlight scala %}
+<pre class="prettyprint">
 object InvertedIndexHelper extends App {
 
   var filePath2ID = Map[String,String]()
@@ -104,7 +104,7 @@ object InvertedIndexHelper extends App {
 
 }
 
-{% endhighlight %}
+</pre>
 
 ## Unit test covered by 
 [scalaTest](http://www.scalatest.org/) & [akka-testkit](http://doc.akka.io/docs/akka/current/scala/testing.html)
