@@ -1,5 +1,5 @@
 #theme: jekyll-theme-cayman
-name: Gabriel.Liu
+name: Yufei.Liu
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 kramdown:
