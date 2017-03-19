@@ -30,6 +30,7 @@ entry of inverted index map format like `word -> Map(doc_id -> (occurrences, ind
 
 
 <pre class="prettyprint">
+<code class="language-scala">
 object InvertedIndexHelper extends App {
 
   var filePath2ID = Map[String,String]()
@@ -103,7 +104,7 @@ object InvertedIndexHelper extends App {
   println(buildupInvertedMap(input, Stemming.doStem _).mkString("\n"))
 
 }
-
+</code>
 </pre>
 
 ## Unit test covered by 
