@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SearchEngine"
+title: "A little skinny full-text search tool by full inverted index"
 date: 2017-03-19
 ---
 
@@ -14,6 +14,21 @@ Facing to a task that
 ## Output of full inverted index map list as below
 
 entry of inverted index map format like `word -> Map(doc_id -> (occurrences, index_list)`
+
+For the simple test 4 docs with the ID as the index, I just makes it simple as possible
+doc1.txt
+>new home sales top forecasts
+ ascend ascend ascend
+ 
+doc2.txt
+>home sales rise in july sales sales
+ home sales rise in july sales sales
+ 
+doc3.txt
+> increase in home sales in july
+
+doc4.txt
+> july new home sales rise
 
 * forecast -> Map(1 -> (1,ArrayBuffer(19)))
 * sale -> Map(2 -> (6,ArrayBuffer(5, 24, 30, 41, 60, 66)), 4 -> (1,ArrayBuffer(15)), 1 -> (1,ArrayBuffer(9)), 3 -> (1,ArrayBuffer(18)))
