@@ -53,7 +53,7 @@ Jhipster,AngularJS1, Groovy on Grails,Docker,PHP
 **Qingdao Alcatel-Lucent R&D|Senior Software Engineer**  
 **Telecom Operators/Service Providers**  
 ### Job Description:  
-**Alcatel-Lucent COM(Centre Operatoin Manager) – Fault Management**  
+**Alcatel-Lucent COM(Centre Operation Manager) – Fault Management**  
 **Senior Software Engineer**
 This is an on-going project for Alcatel-Lucent I ‘ve been working for 3 years, 
 a large-scale network management system which involves almost one hundred developers aiming for proving customers with high expandability and flexibility to manage a large network environment.,  
