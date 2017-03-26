@@ -4,18 +4,53 @@ title: "Activiti Start Up"
 date: 2017-03-20
 ---
 Recently, I've been going through Activiti framework for accelerating an planed business work flow project.
-To be honest, Activiti's API is not quite appealing to me after coding through its official quick start tutorial.
-Mainly because I have little idea about concept of BPMN(Business Process Model and Notation), which is a buzzword in OA&ERP
+Even though, I've pushed an simple example repo into Github about integration spring-boot with Activiti.
+To be honest, Activiti's API is not quite appealing to me after reading through its official quick start tutorial.
+Mainly because of the lack of concept of BPMN (Business Process Model and Notation), which is a buzzword in OA&ERP
 
 Here I will post the Acitivit official quick start guide, and try to explain the crucial API by my understanding.
 
 In this example, a simple business flow can be described as 
 
 ![Overall flow chart](https://www.activiti.org/sites/default/files/Picture1_0.png)
+
 1. Begin the process with entering data
 2. If the years of experience are above 3, a task for a manually input onboarding welcome will be issued.
 3. otherwise, years less than 3, a system message will be generated automatically instead.
-A quick snapshot to the code
+
+B## PMN2.0.xml can be described as below
+
+<pre class="prettyprint lang-html">
+    <process id="onboarding" name="Onboarding" isExecutable="true">
+        <startEvent id="startOnboarding" name="Start" activiti:initiator="initiator"></startEvent>
+        <userTask id="enterOnboardingData" name="Enter Data" activiti:assignee="${initiator}" activiti:candidateGroups="managers">
+            <extensionElements>
+                <activiti:formProperty id="fullName" name="Full Name" type="string"></activiti:formProperty>
+                <activiti:formProperty id="yearsOfExperience" name="Years of Experience" type="long" required="true"></activiti:formProperty>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="sid-1337EA98-7364-4198-B5D9-30F5341D6918" sourceRef="startOnboarding" targetRef="enterOnboardingData"></sequenceFlow>
+        <exclusiveGateway id="decision" name="Years of Experience" default="automatedIntroPath"></exclusiveGateway>
+        <sequenceFlow id="sid-42BE5661-C3D5-4DE6-96F5-73D34822727A" sourceRef="enterOnboardingData" targetRef="decision"></sequenceFlow>
+        <userTask id="personalizedIntro" name="Personalized Introduction and Data Entry" activiti:assignee="${initiator}" activiti:candidateGroups="managers">
+            <extensionElements>
+                <activiti:formProperty id="personalWelcomeTime" name="Personal Welcome Time" type="date" datePattern="MM-dd-yyyy hh:mm"></activiti:formProperty>
+            </extensionElements>
+        </userTask>
+        <endEvent id="endOnboarding" name="End"></endEvent>
+        <sequenceFlow id="sid-37A73ACA-2E23-400B-96F3-71F77738DAFA" sourceRef="automatedIntro" targetRef="endOnboarding"></sequenceFlow>
+        <serviceTask id="automatedIntro" name="Generic and Automated Data Entry" activiti:class="com.example.AutomatedDataDelegate"></serviceTask>
+        <sequenceFlow id="automatedIntroPath" sourceRef="decision" targetRef="automatedIntro"></sequenceFlow>
+        <sequenceFlow id="personalizedIntroPath" name="&gt;3" sourceRef="decision" targetRef="personalizedIntro">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${yearsOfExperience > 3}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="sid-BA6F061B-47B6-428B-8CE6-739244B14BD6" sourceRef="personalizedIntro" targetRef="endOnboarding"></sequenceFlow>
+    </process>
+
+</pre>
+
+
+## A quick snapshot to the code
 
 <pre class="prettyprint lang-java">
 public class OnboardingRequest {
@@ -126,3 +161,5 @@ public class OnboardingRequest {
 
 </pre>
 
+It's a pretty basic all-in-one example to show activiti's critical APIs, from setting up DB, reading procedure XML file to handling a task lifecycle
+The while-loop always take the next task to process when it's NOT end, then read user's CLI input to change task's form data.
