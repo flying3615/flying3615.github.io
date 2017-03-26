@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Activiti Start Up"
-date: 2017-03-20
+date: 2017-03-25
 ---
 Recently, I've been going through Activiti framework for accelerating an planed business work flow project.
 Even though, I've pushed an simple example repo into Github about integration spring-boot with Activiti.
@@ -18,9 +18,10 @@ In this example, a simple business flow can be described as
 2. If the years of experience are above 3, a task for a manually input onboarding welcome will be issued.
 3. otherwise, years less than 3, a system message will be generated automatically instead.
 
-B## PMN2.0.xml can be described as below
+## BPMN2.0.xml can be described as below
 
-<pre class="prettyprint lang-html">
+<pre class="prettyprint lang-java">
+
     <process id="onboarding" name="Onboarding" isExecutable="true">
         <startEvent id="startOnboarding" name="Start" activiti:initiator="initiator"></startEvent>
         <userTask id="enterOnboardingData" name="Enter Data" activiti:assignee="${initiator}" activiti:candidateGroups="managers">
@@ -42,7 +43,7 @@ B## PMN2.0.xml can be described as below
         <serviceTask id="automatedIntro" name="Generic and Automated Data Entry" activiti:class="com.example.AutomatedDataDelegate"></serviceTask>
         <sequenceFlow id="automatedIntroPath" sourceRef="decision" targetRef="automatedIntro"></sequenceFlow>
         <sequenceFlow id="personalizedIntroPath" name="&gt;3" sourceRef="decision" targetRef="personalizedIntro">
-            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${yearsOfExperience > 3}]]></conditionExpression>
+            <conditionExpression xsi:type="tFormalExpression"></conditionExpression>
         </sequenceFlow>
         <sequenceFlow id="sid-BA6F061B-47B6-428B-8CE6-739244B14BD6" sourceRef="personalizedIntro" targetRef="endOnboarding"></sequenceFlow>
     </process>
