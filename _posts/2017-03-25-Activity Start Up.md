@@ -53,7 +53,7 @@ In this example, a simple business flow can be described as
 
 ## A quick snapshot to the code
 
-<pre class="prettyprint lang-java">
+{% highlight java linenos %}
 public class OnboardingRequest {
 
     public static void main(String[] args) throws ParseException {
@@ -159,8 +159,7 @@ public class OnboardingRequest {
         scanner.close();
     }
 }
-
-</pre>
+{% endhighlight %}
 
 It's a pretty basic all-in-one example to show activiti's critical APIs, from setting up DB, reading procedure XML file to handling a task lifecycle
 The while-loop always take the next task to process when it's NOT end, then read user's CLI input to change task's form data.
