@@ -53,7 +53,7 @@ In this example, a simple business flow can be described as
 
 ## A quick snapshot to the code
 
-{% highlight java linenos %}
+{% highlight java %}
 public class OnboardingRequest {
 
     public static void main(String[] args) throws ParseException {
