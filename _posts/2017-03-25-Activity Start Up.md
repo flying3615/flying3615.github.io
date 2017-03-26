@@ -20,7 +20,7 @@ In this example, a simple business flow can be described as
 
 ## BPMN2.0.xml can be described as below
 
-<pre class="prettyprint lang-java">
+``` xml
 
     <process id="onboarding" name="Onboarding" isExecutable="true">
         <startEvent id="startOnboarding" name="Start" activiti:initiator="initiator"></startEvent>
@@ -48,7 +48,7 @@ In this example, a simple business flow can be described as
         <sequenceFlow id="sid-BA6F061B-47B6-428B-8CE6-739244B14BD6" sourceRef="personalizedIntro" targetRef="endOnboarding"></sequenceFlow>
     </process>
 
-</pre>
+```
 
 
 ## A quick snapshot to the code
