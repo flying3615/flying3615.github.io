@@ -253,7 +253,12 @@ Above code is not workable in terms of video address analysis, list here only fo
 Finally, I have turn to Selenium, which is quite powerful tool to simulate the real user operation.
 It's powered by a WebDriver, which almost all modern browsers support to.
 Only thing to do is setup for the web driver and tell the program where it is you installed and Maven dependency
-Here I'm using ChromeDriver
+Here I'm using ChromeDriver.
+This code is just for analysis of video address, you can by whatever means to download it.
+Just make sure don't use multi-thread download, as PluralSight will ban your account if they spot
+abnormal dataflow.
+
+Happy Hacking.
 
 pom.xml
 ```$xslt
@@ -399,12 +404,5 @@ public class SeleScraper {
         }
     }
 }
-
 </pre>
 
-
-This code is just for analysis of video address, you can by whatever means to download it.
-Just make sure don't use multi-thread download, as PluralSight will ban your account if they spot
-abnormal dataflow.
-
-Happy Hacking.
