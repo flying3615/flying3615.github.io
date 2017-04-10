@@ -17,7 +17,8 @@ Although there are loads of plugins for Chrome browser you can use to download v
 one [saveFrom Hleper](http://en.savefrom.net/user.php) which I'm using.
 It's quite versatile, not only for YouTube,but also for any online video-site else and quite well get along with the browser.
 Just like this:
-![Overall flow chart](https://www.activiti.org/sites/default/files/Picture1_0.png)
+![plugin effects](https://raw.githubusercontent.com/flying3615/flying3615.github.io/master/image/youtube_download.png)
+Two new buttons attached on the page.
 However, the shortage is that you have to manually download the videos one by one.
 If you want to download a channel's all videos the arduous work emerged.
 What I want it is using the YouTube API to retrieve all the videos' address and input them into program
@@ -404,6 +405,9 @@ public class SeleScraper {
 }
 </pre>
 
+
 This code is just for analysis of video address, you can by whatever means to download it.
 Just make sure don't use multi-thread download, as PluralSight will ban your account if they spot
 abnormal dataflow.
+
+Happy Hacking.
