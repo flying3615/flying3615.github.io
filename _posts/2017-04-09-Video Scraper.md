@@ -23,7 +23,7 @@ However, the shortage is that you have to manually download the videos one by on
 If you want to download a channel's all videos the arduous work emerged.
 What I want it is using the YouTube API to retrieve all the videos' address and input them into program
 and analysis their addresses and download.
-After searching in Google, I found [Vget Home](https://gitlab.com/axet/vget) is what I want.
+After searching in Google, I found [Vget Home](https://gitlab.com/axet/vget) which is what I want.
 You can read through examples list on that page.
 Essentially, this lib using *YouTubeParser.java* to extract video link via matching regex.
 
