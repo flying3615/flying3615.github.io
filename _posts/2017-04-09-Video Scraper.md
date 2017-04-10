@@ -284,9 +284,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
-/**
- * Created by liuyufei on 5/04/17.
- */
 public class SeleScraper {
 
     //keep the order
