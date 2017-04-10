@@ -375,7 +375,6 @@ public class SeleScraper {
             parent_driver = new ChromeDriver();
         }
         parent_driver.get(videoPage);
-//        handleCookie(video_driver);
         Thread.sleep(3000);
 
         WebElement video = parent_driver.findElement(By.xpath("//*[@id=\"vjs_video_3_html5_api\"]"));
@@ -403,6 +402,7 @@ public class SeleScraper {
         }
     }
 }
+
 </pre>
 
 
