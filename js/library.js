@@ -1,6 +1,6 @@
-$(document).ready(function(){
-  
-  init_document_ready();
+$(document).ready(function () {
+
+    init_document_ready();
 
 });
 
@@ -10,11 +10,11 @@ $(document).ready(function(){
  * loaded.
  * - - - - - - - - - - - - - - - - - - - - - - - - -
  */
- 
+
 function init_document_ready() {
 
-  create_colorSwatch();
-
+    create_colorSwatch();
+    self_define();
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -22,26 +22,38 @@ function init_document_ready() {
 
 function create_colorSwatch() {
 
-  $( "li.color" ).each(function() {
-    
-    var color = $( this ).text();
-    $( this ).css( "background-color" , color );
-    
-    //if the single swatch color is too dark, use a lighter font color to display the hex color value
-    
-    var c = color.substring(1);      // strip #
-    var rgb = parseInt(c, 16);   // convert rrggbb to decimal
-    var r = (rgb >> 16) & 0xff;  // extract red
-    var g = (rgb >>  8) & 0xff;  // extract green
-    var b = (rgb >>  0) & 0xff;  // extract blue
+    $("li.color").each(function () {
 
-    var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+        var color = $(this).text();
+        $(this).css("background-color", color);
 
-    if (luma < 85) {
-      $( this ).css( "color" , "#f0f0f0" );
-    }
-    
-  });
+        //if the single swatch color is too dark, use a lighter font color to display the hex color value
+
+        var c = color.substring(1);      // strip #
+        var rgb = parseInt(c, 16);   // convert rrggbb to decimal
+        var r = (rgb >> 16) & 0xff;  // extract red
+        var g = (rgb >> 8) & 0xff;  // extract green
+        var b = (rgb >> 0) & 0xff;  // extract blue
+
+        var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+
+        if (luma < 85) {
+            $(this).css("color", "#f0f0f0");
+        }
+
+    });
+
+}
+
+function self_define() {
+    $("#golang").hover(
+        function () {
+            var src = ($(this).attr('src') === 'image/golang.png')
+                ? 'image/golang2.png'
+                : 'image/golang.png';
+            $(this).attr('src', src);
+        }
+    )
 
 }
 
