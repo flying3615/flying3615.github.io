@@ -34,6 +34,7 @@ h3.text-muted a:hover { text-shadow: 0 2px 5px rgba(0,0,0,0.5); color: white; }
 body > div.scrollContent > section.index > div.blurb.container > h1 > a {
 	text-decoration: none; color: white;
 	text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+	text-align: center;
 }
 
 /*description*/
@@ -43,7 +44,7 @@ body > div.scrollContent > section.index > div.blurb.container > p {
 	color: white;
 	font-size: 17px;
 	line-height: 200%;
-
+	text-align: center;
 }
 
 
@@ -168,8 +169,13 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 }
 
 .bordeaux{
-	filter:blur(2px);
 	background-image: url("../image/slider-image-3.jpg");
+}
+
+
+#pinContainer > section.panel.green > div > div > div > article {
+	max-width: 600px;
+	margin: auto;
 }
 
 
