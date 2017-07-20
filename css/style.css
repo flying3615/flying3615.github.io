@@ -6,7 +6,7 @@ body {
 	font-family: "Source Sans Pro", "Roboto", "Open Sans", Arial, sans-serif;
 	font-size: 16px;
 	background: no-repeat center center fixed;
-	background-image:linear-gradient(135deg, #f1f3ce, #1995ad);
+	background-image:linear-gradient(135deg, #d0e1f9, #283655);
 
 }
 
@@ -160,15 +160,15 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 }
 
 .turqoise{
-	background-image:linear-gradient(135deg, #d0e1f9, #283655);
-
+	background-image:linear-gradient(135deg, #f1f3ce, #1995ad);
 }
 
 .green{
-	background-image:linear-gradient(135deg, #a1d6e2, #1995ad);
+	background-image:linear-gradient(45deg, #af4425, #ebdcb2);
 }
 
 .bordeaux{
+	filter:blur(2px);
 	background-image: url("../image/slider-image-3.jpg");
 }
 
