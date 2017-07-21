@@ -16,6 +16,20 @@ $(function () { // wait for document ready
         // })
         .setClassToggle('#can_help', 'fade-in').addTo(fadeinController);
 
+    //about pop-up scene
+    new ScrollMagic.Scene({
+        triggerElement: '#panel-2',
+        // triggerHook: 0.9,
+        duration: "150%"
+    })
+    // .addIndicators({
+    //     name: 'can help scene',
+    //     colorTrigger: 'black',
+    //     indent: 10
+    // })
+        .setClassToggle('#about_life', 'left-in').addTo(fadeinController);
+
+
 
     // $('.panel').each(function () {
     //     //first panel fade in scene
@@ -78,10 +92,17 @@ $(function () { // wait for document ready
         // })
         .addTo(fadeinController);
 
-    // new ScrollMagic.Scene({
-    //     triggerElement: '#panel-1',
-    //     duration: "100%"
-    // }).setPin('.go_myself').addTo(fadeinController)
+    //parallax scene
+    new ScrollMagic.Scene({
+        triggerElement: '.bcg-parallax',
+        triggerHook:1,
+        duration: "150%"
+    }).setTween(TweenMax.from('.bcg',1,{y:'-50%',ease:Power0.easeNone}))
+        .addIndicators({
+        name: 'parallax scene',
+        colorTrigger: 'black',
+        indent: 100
+    }).addTo(fadeinController)
 
 
 });
