@@ -412,6 +412,12 @@ blockquote p.credit {
     text-align: right;
 }
 
+blockquote p.credit::before {
+    content: '\2014';
+    top: -1px;
+    left: 0;
+}
+
 blockquote h2::before {
     content: '\201c';
     color: #d2bd65;
