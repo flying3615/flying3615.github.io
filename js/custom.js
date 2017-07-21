@@ -18,13 +18,32 @@ $(function () { // wait for document ready
         // .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-    var controller2 = new ScrollMagic.Controller();
+    var fadeinController = new ScrollMagic.Controller();
 
     new ScrollMagic.Scene({
-        triggerElement:'#pinContainer > section.panel.green > div > div > div > article'
-    }).setClassToggle('#pinContainer > section.panel.green > div > div > div > article','fade-in')
-        .addTo(controller2);
+        triggerElement: 'section.panel.green',
+        // triggerHook: 0,
+        duration: "100%"
+    }).setClassToggle('#can_help', 'fade-in')
+        .addIndicators({
+            name:'fade scene',
+            colorTrigger:'black',
+            indent:200
+        }) // add indicators (requires plugin)
+        .addTo(fadeinController);
 
+
+    new ScrollMagic.Scene({
+        triggerElement: '#pinContainer > section.panel.turqoise > b',
+        // triggerHook: 0,
+        duration: "100%"
+    }).setClassToggle('#pinContainer > section.panel.turqoise > b', 'fuck')
+        .addIndicators({
+            name:'fuck scene',
+            colorTrigger:'black',
+            indent:200
+        }) // add indicators (requires plugin)
+        .addTo(fadeinController);
 
 
 });

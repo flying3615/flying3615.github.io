@@ -173,7 +173,7 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 }
 
 
-#pinContainer > section.panel.green > div > div > div > article {
+#can_help {
 	font-family: brandon-grotesque,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 	padding-top: 25%;
 	max-width: 600px;
@@ -181,6 +181,13 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 	text-align: center;
 	text-shadow: 0 2px 5px rgba(0,0,0,0.5);
 	color: #c4dfe6;
+	opacity: 0;
+	transform: translateY(100px);
+	transition: all 2s ease-out;
+
+}
+#can_help.fade-in{
+	opacity: 1;	transform: translateY(0px);
 }
 
 
