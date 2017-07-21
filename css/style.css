@@ -399,8 +399,38 @@ article {
 .imagination_wrapper {
     width: 90%;
     margin: auto;
-    /*max-width:1140px;*/
     position: relative;
     z-index: 2;
+}
 
+blockquote p.credit {
+    color: #c4dfe6;
+    margin-top: 0;
+    padding-left: 20px;
+    line-height: 1.3em;
+    position: relative;
+    text-align: right;
+}
+
+blockquote h2::before {
+    content: '\201c';
+    color: #d2bd65;
+    top: 10px;
+    left: 8px;
+    font-size: 3em;
+    font-family: serif;
+}
+
+blockquote h2.quote::after {
+    content: '\201d';
+    font-family: serif;
+}
+
+#bible-deuteronomy{
+    opacity: 0;
+    transition: all 2s ease-out;
+}
+
+#bible-deuteronomy.fade-in{
+    opacity: 1;
 }
