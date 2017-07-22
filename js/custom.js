@@ -17,12 +17,16 @@ $(function () { // wait for document ready
         duration: "150%"
     }).setClassToggle('#about_life', 'left-in').addTo(fadeinController);
 
-
+    // var quote = $('blockquote h2.quote')
+    // var quote = $('blockquote p.credit')
+    var tween = new TimelineMax().from('blockquote h2.quote', 1, {autoAlpha: 0, y: -200, ease: Power0.easeNone})
+        .from('blockquote p.credit', 1, {autoAlpha: 0, delay: 1})
     new ScrollMagic.Scene({
         triggerElement: '#panel-4',
         triggerHook: 0.3,
-        duration: "100%"
-    }).setClassToggle('#bible-deuteronomy', 'fade-in').addTo(fadeinController);
+        duration: "30%"
+    }).setTween(tween)
+        .addTo(fadeinController);
 
 
     new ScrollMagic.Scene({
@@ -49,14 +53,14 @@ $(function () { // wait for document ready
     //parallax scene
     new ScrollMagic.Scene({
         triggerElement: '.bcg-parallax',
-        triggerHook:1,
+        triggerHook: 1,
         duration: "150%"
-    }).setTween(TweenMax.from('.bcg',1,{y:'-50%',ease:Power0.easeNone}))
-        // .addIndicators({
-        // name: 'parallax scene',
-        // colorTrigger: 'black',
-        // indent: 100
-        // })
+    }).setTween(TweenMax.from('.bcg', 1, {y: '-50%', ease: Power0.easeNone}))
+    // .addIndicators({
+    // name: 'parallax scene',
+    // colorTrigger: 'black',
+    // indent: 100
+    // })
         .addTo(fadeinController)
 
 

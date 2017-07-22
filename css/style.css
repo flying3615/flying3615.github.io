@@ -431,12 +431,3 @@ blockquote h2.quote::after {
     content: '\201d';
     font-family: serif;
 }
-
-#bible-deuteronomy{
-    opacity: 0;
-    transition: all 2s ease-out;
-}
-
-#bible-deuteronomy.fade-in{
-    opacity: 1;
-}
