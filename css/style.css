@@ -32,7 +32,7 @@ body.moss{
 
 body.thundercloud{
     background-image: none;
-    background-color: #de7a22;
+    background-color: #c4dfe6;
     transition: all 2s ease-out;
 }
 
@@ -404,7 +404,7 @@ article {
 }
 
 blockquote p.credit {
-    color: #c4dfe6;
+    color: #07575b;
     margin-top: 0;
     padding-left: 20px;
     line-height: 1.3em;
@@ -427,7 +427,12 @@ blockquote h2::before {
     font-family: serif;
 }
 
+blockquote h2.quote{
+    color: #07575b;
+}
+
 blockquote h2.quote::after {
     content: '\201d';
     font-family: serif;
+    color: #d2bd65;
 }
