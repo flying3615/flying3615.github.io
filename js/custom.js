@@ -75,4 +75,7 @@ $(function () { // wait for document ready
         .from('#self-desc',0.5,{y:25,autoAlpha:0,ease:Power1.easeOut},'-=0.15')
         .from('#timelineJS',0.5,{y:-25,autoAlpha:0,ease:Power1.easeOut},'-=0.15')
 
+    var postTl = new TimelineLite();
+    postTl.staggerFrom('.post',0.5,{x:100,autoAlpha:0,ease:Power1.easeOut},0.1)
+
 });
