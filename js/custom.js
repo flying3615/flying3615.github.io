@@ -17,8 +17,7 @@ $(function () { // wait for document ready
         duration: "150%"
     }).setClassToggle('#about_life', 'left-in').addTo(fadeinController);
 
-    // var quote = $('blockquote h2.quote')
-    // var quote = $('blockquote p.credit')
+
     var tween = new TimelineMax().from('blockquote h2.quote', 1, {autoAlpha: 0, y: -200, ease: Power0.easeNone})
         .from('blockquote p.credit', 1, {autoAlpha: 0, delay: 1})
     new ScrollMagic.Scene({
@@ -29,26 +28,20 @@ $(function () { // wait for document ready
         .addTo(fadeinController);
 
 
-    new ScrollMagic.Scene({
-        triggerElement: '#panel-1',
-        duration: "100%"
-    }).setClassToggle('body', 'moss').addTo(fadeinController);
+    var colorEffectArray = {
+        '#panel-1':'moss',
+        '#panel-2':'waterfall',
+        '#panel-3':'meadow',
+        '#panel-4':'thundercloud',
+    }
 
+    for(var panel in colorEffectArray){
+        new ScrollMagic.Scene({
+            triggerElement: panel,
+            duration: "100%"
+        }).setClassToggle('body', colorEffectArray[panel]).addTo(fadeinController);
+    }
 
-    new ScrollMagic.Scene({
-        triggerElement: '#panel-2',
-        duration: "100%"
-    }).setClassToggle('body', 'waterfall').addTo(fadeinController);
-
-    new ScrollMagic.Scene({
-        triggerElement: '#panel-3',
-        duration: "100%"
-    }).setClassToggle('body', 'meadow').addTo(fadeinController);
-
-    new ScrollMagic.Scene({
-        triggerElement: '#panel-4',
-        duration: "100%"
-    }).setClassToggle('body', 'thundercloud').addTo(fadeinController);
 
     //parallax scene
     new ScrollMagic.Scene({
