@@ -70,9 +70,9 @@ $(function () { // wait for document ready
     var tl = new TimelineLite();
     tl
         .from('body > div.header > h3 > a',0.5,{y:-25,autoAlpha:0,ease:Power1.easeOut})
-        .from('.go_myself',0.5,{y:-25,autoAlpha:0,ease:Power1.easeOut},'-=0.15')
-        .from('#self-taught',0.5,{y:-25,autoAlpha:0,ease:Power1.easeOut},'-=0.15')
-        .from('#self-desc',0.5,{y:-25,autoAlpha:0,ease:Power1.easeOut},'-=0.15')
+        .from('.go_myself',0.5,{x:-25,autoAlpha:0,ease:Power1.easeOut},'-=0.15')
+        .from('#self-taught',0.5,{x:25,autoAlpha:0,ease:Power1.easeOut},'-=0.15')
+        .from('#self-desc',0.5,{y:25,autoAlpha:0,ease:Power1.easeOut},'-=0.15')
         .from('#timelineJS',0.5,{y:-25,autoAlpha:0,ease:Power1.easeOut},'-=0.15')
 
 });
