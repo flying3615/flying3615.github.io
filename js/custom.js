@@ -43,6 +43,15 @@ $(function () { // wait for document ready
     }
 
 
+    //fade out timejs frame
+    new ScrollMagic.Scene({
+        triggerElement: '#panel-1',
+        triggerHook: 0.8,
+        duration: "50%"
+    }).setTween(TweenMax.to('#timelineJS', 0.5, {autoAlpha: 0, scale:10, ease: Power0.easeNone}))
+        .addTo(fadeinController)
+
+
     //parallax scene
     new ScrollMagic.Scene({
         triggerElement: '.bcg-parallax',
