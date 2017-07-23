@@ -43,13 +43,27 @@ $(function () { // wait for document ready
     }
 
 
+
     //fade out timejs frame
     new ScrollMagic.Scene({
         triggerElement: '#panel-1',
         triggerHook: 0.8,
         duration: "50%"
-    }).setTween(TweenMax.to('#timelineJS', 0.5, {autoAlpha: 0, scale:10, ease: Power0.easeNone}))
-        .addTo(fadeinController)
+    }).setTween(
+        TweenMax.to('#timelineJS', 0.5, {autoAlpha: 0, scale:10, ease: Power0.easeNone})
+    ).addTo(fadeinController)
+
+    //fade out menu
+    new ScrollMagic.Scene({
+        triggerElement: '#timelineJS',
+        triggerHook: 0.3,
+        duration: "20%"
+    }).setTween(
+        TweenMax.to('.header', 0.5, {y:-200,autoAlpha: 0, ease: Power0.easeNone})
+    ).addTo(fadeinController)
+
+
+
 
 
     //parallax scene
