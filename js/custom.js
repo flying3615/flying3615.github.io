@@ -146,12 +146,12 @@ $(function () { // wait for document ready
         function getAjaxFiles(path) {
             $.ajax({
                 url: path,
-                success: function (data) {
+                success: function (data) {˚
                     $(data).find("a:contains(.jpg)").each(function () {
                         book_count++
                         var images = $(this).attr("href");
                         $('.owl-carousel')
-                            .owlCarousel('add', '<image src=' + path + '/' + images + ' class=book_img width=196px height=257px margin=2px>')
+                            .owlCarousel('add', '<image src=' + path + '/' + images + '/ class=book_img width=196px height=257px margin=2px>')
                             .owlCarousel('refresh')
                     });
                 }
