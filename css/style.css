@@ -486,3 +486,7 @@ blockquote h2.quote::after {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
+/*cv blog color*/
+body > div.header > ul > li > a{
+    color: white;
+}
