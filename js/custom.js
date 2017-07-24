@@ -146,7 +146,7 @@ $(function () { // wait for document ready
         function getAjaxFiles(path) {
             $.ajax({
                 url: path,
-                success: function (data) {˚
+                success: function (data) {
                     $(data).find("a:contains(.jpg)").each(function () {
                         book_count++
                         var images = $(this).attr("href");
