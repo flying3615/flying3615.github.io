@@ -126,7 +126,7 @@ $(function () { // wait for document ready
                 if (t == 'all') {
                     getImages()
                 } else {
-                    getImages('http://flying3615.github.io/image/books/' + t)
+                    getImages('../image/books/' + t)
                 }
             })
         })
@@ -137,7 +137,7 @@ $(function () { // wait for document ready
                 getAjaxFiles(path);
             } else {
                 booktype.forEach(function (t) {
-                    getAjaxFiles("http://flying3615.github.io/image/books/" + t);
+                    getAjaxFiles("../image/books/" + t);
                 })
             }
         }
