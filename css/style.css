@@ -455,3 +455,34 @@ blockquote h2.quote::after {
     font-family: serif;
     color: #d2bd65;
 }
+
+.books_list {
+    margin-bottom:40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.book_type{
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 4px;
+    margin-bottom: 4px;
+}
+.books_img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.books_container{
+    position: relative;
+    top:10%;
+}
+
+.book_read{
+    color: #eeee;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
