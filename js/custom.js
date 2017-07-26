@@ -139,7 +139,7 @@ $(function () { // wait for document ready
                 getAjaxFiles(path);
             } else {
                 booktype.forEach(function (t) {
-                    getAjaxFiles("https://github.com/flying3615/flying3615.github.io/tree/master/image/books" + t);
+                    getAjaxFiles("https://github.com/flying3615/flying3615.github.io/tree/master/image/books/" + t);
                 })
             }
         }
@@ -152,8 +152,12 @@ $(function () { // wait for document ready
                     $(data).find("a:contains(.jpg)").each(function () {
                         book_count++
                         var images = $(this).attr("href");
+                        var imgName = images.split("/").slice(-1)[0];
+
+                        var bookType = path.split("/").slice(-1)[0];
+
                         $('.owl-carousel')
-                            .owlCarousel('add', '<image src=' + path + '/' + images + '/ class=book_img width=196px height=257px margin=2px>')
+                            .owlCarousel('add', '<image src=https://raw.githubusercontent.com/flying3615/flying3615.github.io/master/image/books/'+bookType+'/' + imgName + ' class=book_img width=196px height=257px margin=2px>')
                             .owlCarousel('refresh')
                     });
                 }
