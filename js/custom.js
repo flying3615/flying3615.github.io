@@ -132,36 +132,32 @@ $(function () { // wait for document ready
                 if (t == 'all') {
                     getImages()
                 } else {
-                    getImages('https://github.com/flying3615/flying3615.github.io/tree/master/image/books/' + t)
+                    getImages(t)
                 }
             })
         })
 
 
-        function getImages(path) {
-            if (path) {
-                getAjaxFiles(path);
+        function getImages(type) {
+            if (type) {
+                getAjaxFiles(type);
             } else {
                 booktype.forEach(function (t) {
-                    getAjaxFiles("https://github.com/flying3615/flying3615.github.io/tree/master/image/books/" + t);
+                    getAjaxFiles(t);
                 })
             }
         }
 
 
-        function getAjaxFiles(path) {
+        function getAjaxFiles(type) {
             $.ajax({
-                url: path,
+                url: 'https://api.github.com/repos/flying3615/flying3615.github.io/contents/image/books/'+type,
                 success: function (data) {
-                    $(data).find("a:contains(.jpg)").each(function () {
+                    $(data).each(function () {
                         book_count++
-                        var images = $(this).attr("href");
-                        var imgName = images.split("/").slice(-1)[0];
-
-                        var bookType = path.split("/").slice(-1)[0];
-
+                        var images = this.download_url;
                         $('.owl-carousel')
-                            .owlCarousel('add', '<image src=https://raw.githubusercontent.com/flying3615/flying3615.github.io/master/image/books/'+bookType+'/' + imgName + ' class=book_img width=196px height=257px margin=2px>')
+                            .owlCarousel('add', '<image src='+ images + ' class=book_img width=196px height=257px margin=2px>')
                             .owlCarousel('refresh')
                     });
                 }
