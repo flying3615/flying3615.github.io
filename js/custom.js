@@ -101,6 +101,9 @@ $(function () { // wait for document ready
             dots: false,
             animateOut: 'slideOutDown',
             animateIn: 'flipInX',
+            autoplay:true,
+            autoplayTimeout:1500,
+            autoplayHoverPause:true,
             margin: 10,
             nav: true,
             responsive: {
