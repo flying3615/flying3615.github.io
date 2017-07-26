@@ -143,7 +143,7 @@ $(function () { // wait for document ready
                 getAjaxFiles(type);
             } else {
                 booktype.forEach(function (t) {
-                    getAjaxFiles(t);
+                    if(t!='all') getAjaxFiles(t);
                 })
             }
         }
