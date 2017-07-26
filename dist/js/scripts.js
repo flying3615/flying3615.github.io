@@ -5,10 +5,11 @@ $(function () { // wait for document ready
 
         //can help fade in scene
         new ScrollMagic.Scene({
-            triggerElement: '#panel-1',
+            triggerElement: '#panel-3',
             // triggerHook: 0.9,
             duration: "150%"
-        }).setClassToggle('#can_help', 'fade-in').addTo(fadeinController);
+        }).setClassToggle('#can_help', 'fade-in')
+            .addTo(fadeinController);
 
         //about pop-up scene
         new ScrollMagic.Scene({
