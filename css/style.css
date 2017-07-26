@@ -119,11 +119,6 @@ h3.text-muted a:hover {
     margin-bottom: 20px;
 }
 
-.nav > li > a:hover, .nav > li > a:focus {
-    box-shadow: 5px 5px 5px #888888;
-    color: #f4a35b;
-}
-
 img.avatar {
     margin-bottom: 30px;
 }
@@ -404,7 +399,7 @@ article {
 }
 
 .bcg{
-   background: url("../image/slider-image-3.jpg") no-repeat;
+   background: url("/image/slider-image-3.jpg") no-repeat;
     background-size: cover;
     position: absolute;
     width: 100%;

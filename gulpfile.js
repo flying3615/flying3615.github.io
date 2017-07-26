@@ -19,7 +19,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('css', function () {
-    gulp.src('css/*.css')
+    gulp.src(['css/*.css','!css/*.min.css'])
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/css'));

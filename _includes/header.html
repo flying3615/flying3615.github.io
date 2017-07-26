@@ -1,9 +1,11 @@
-<div class="header">
-	<ul class="nav nav-pills pull-right">
-		<!-- <li class="{{ page.projects }}"><a href="/projects" title="Projects">Projects</a></li> -->
-		<li class="{{ page.blog }}"><a href="/blog" title="Blog">Blog</a></li>
-		<li class="{{ page.cv }}"><a href="/cv" title="CV">CV</a></li>
-		<!--<li class="{{ page.contact }}"><a href="/contact" title="Contact">Contact</a></li>-->
-	</ul>
-	<h3 class="text-muted"><a href="/">(0 to life_span).filter(!rest).reduce(knowledge+new)</a></h3>
-</div> <!-- /header -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/"><strong>(0 to life_span).filter(!rest).reduce(knowledge+new)</strong></a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="{{ page.blog }}"><a href="/blog" title="Blog">Blog</a></li>
+			<li class="{{ page.cv }}"><a href="/cv" title="CV">CV</a></li>
+		</ul>
+	</div>
+</nav>
