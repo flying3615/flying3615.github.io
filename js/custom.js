@@ -89,6 +89,8 @@ $(function () { // wait for document ready
         postTl.staggerFrom('.post', 0.5, {x: 100, autoAlpha: 0, ease: Power1.easeOut}, 0.1)
 
 
+        TweenMax.from("#golang",2,{x:200,ease:Power1.easeOut})
+
         $('#all').click(function () {
             getImages()
         })
@@ -126,7 +128,7 @@ $(function () { // wait for document ready
                 if (t == 'all') {
                     getImages()
                 } else {
-                    getImages('https://flying3615.github.io/image/books/' + t)
+                    getImages('../image/books/' + t)
                 }
             })
         })
@@ -137,7 +139,7 @@ $(function () { // wait for document ready
                 getAjaxFiles(path);
             } else {
                 booktype.forEach(function (t) {
-                    getAjaxFiles("https://flying3615.github.io/image/books/" + t);
+                    getAjaxFiles("../image/books/" + t);
                 })
             }
         }
