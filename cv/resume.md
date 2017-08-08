@@ -143,7 +143,7 @@ Front side used Flex as the presentation layer, achieved via Twaver framework wh
   
 ## Education Background
 * 2016/07 -- 2017/07  
-Waikato Institute of Technology|Information Engineering|Bachelor 
+Waikato Institute of Technology|Information Technology|Graduate Diploma 
 * 2005/09 -- 2009/09  
 Qingdao University of Science and Technology|Information Engineering|Bachelor      
 
