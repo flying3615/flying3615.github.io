@@ -142,6 +142,8 @@ These two projects are all B/S and used to manage the access network management.
 Front side used Flex as the presentation layer, achieved via Twaver framework which is a famous network topology  framework.  
   
 ## Education Background
+* 2016/07 -- 2017/07  
+Waikato Institute of Technology|Information Engineering|Bachelor 
 * 2005/09 -- 2009/09  
 Qingdao University of Science and Technology|Information Engineering|Bachelor      
 
@@ -150,7 +152,7 @@ Qingdao University of Science and Technology|Information Engineering|Bachelor
 **Thoughtworks**  
 ### Training Course: 
 OOA/D design patterns    
-Training Location: BeiJing    
+Training Location: Beijing    
 Description in Details:  
 General training about multiple design patterns in Java development.    
 
