@@ -19,7 +19,7 @@ I've used Scala and its serial tech stack libraries to develop a [small full inv
 
 ## Work Experience
 
-**2016/11 - 2017/02**   
+## 2016/11 - 2017/02   
 **Shandong Shenhao Property Management Co., Ltd.|Senior Software Engineer**  
 **IT Service/General IT**  
 ### Job Description:  
@@ -32,8 +32,8 @@ The refinement also includes Performance testing(Gatling), code Analysis(SonarQu
 I've setup those DevOps tools by myself for the company.    
 ***Technologies Utilized:***   
 Java8, SpringMVC, Hibernate, Redis, MongoDB.
-
-**2016/07 - 2016/08**   
+---
+## 2016/07 - 2016/08   
 **F6 Digital Media & Marketing**  
 **IT Service/General IT**  
 ### Job Description:  
@@ -45,9 +45,8 @@ Daily websites maintenance(Data Backup/Restore)
 Websites migration  
 ***Technologies Utilized:***  
 WordPress, Docker, MySQL.
-
-
-**2010/11 - 2016/05**   
+---
+## 2010/11 - 2016/05   
 **Qingdao Centling Information Technology Co., Ltd.|Technic Leader**  
 **Telecom Operators/Service Providers**  
 ### Job Description:  
@@ -59,9 +58,8 @@ Training new staff for quickly picking up new technic tools and modern framework
 Leading team to finish several project including e-commerce, information manage system.   
 ***Technologies Utilized:***  
 Jhipster,AngularJS1, Groovy on Grails,Docker,PHP
-
-
-**2010/11 - 2015/05**   
+---
+## 2010/11 - 2015/05   
 **Qingdao Alcatel-Lucent R&D|Senior Software Engineer**  
 **Telecom Operators/Service Providers**  
 ### Job Description:  
@@ -74,8 +72,8 @@ The core technique includes Java EE, Linux K Shell script and Oracle Database.
 This product is primarily divided into 4 parts: Fault Management, Performance Management, Network Element Provisioning and Security authentication system. I am primarily responsible for development of the Fault System.  
 ***Technologies Utilized:***  
 JavaEE(JMS,EJB,JMX,etc), JBoss, Linux Shell, Oracle, Corba Notification Service
-
-**2009/08 - 2010/11**  
+---
+## 2009/08 - 2010/11  
 **Beijing Zhaopin.com|Software Developer**  
 **IT Service/General IT**  
 ### Job Description:
