@@ -1,8 +1,8 @@
 # Yufei Liu
 
 Male| 6 Years' Experience| Born in 1985/ 5 China  
-Location：Hamilton New Zealand|Bachelor| Studying in Wintec Graduate Diploma  
-E-mail：flying3615@163.com  
+Location: Hamilton New Zealand|Bachelor| Studying in Wintec Graduate Diploma  
+E-mail: flying3615@163.com  
 
 [My Github repository](https://github.com/flying3615)
 [Blog](https://flying3615.github.io)
@@ -96,100 +96,93 @@ Develop web page with JavaScript
 Java, jQuery, DWR, Spring
 
 ## Project Experience
-* 2015/05 -- 2016/05  
-Several E-commercial projects  
-software environment：LAMP  
-hardware environment：AWS, ECS+RDS  
-development tools：IntelliJ Idea  
-Responsibilities：  
+* 2015/05 -- 2016/05   
+Several E-commercial projects    
+software environment: LAMP  
+hardware environment: AWS, ECS+RDS    
+development tools: IntelliJ Idea  
+Responsibilities:   
 Leading a team to finish customer required web site building. Main job was to develop back-end PHP development and some front-end JS&CSS optimize.  
-Project Description：  
+Project Description:    
 The projects are relatively similar based on our company e-commercial infrastructure with a whole process of place-order, customer-management, goods-management,etc.  
 For external interfaces, we integrated the projects with ali pay, wechat pay and some other 3rd party data provider like logistic information interface, customer service interface and ERP systems.  
   
 * 2014/03 -- 2014/06  
-China Institute of Microwave - File Management System  
-software environment：Spring, SpringMVC, Hibernate Oracle 11g CentOS  
-hardware environment：x86  
-development tools：Eclipse  
-Responsibilities：  
+China Institute of Microwave - File Management System    
+software environment: Spring, SpringMVC, Hibernate Oracle 11g CentOS    
+hardware environment: x86  
+development tools: Eclipse  
+Responsibilities:   
 Server side architecture and designs of all testing cases  
 Communicate with stakeholders and design the interface   
 Coordinate with other developers to implement this system  
-Create framework infrastructure and Java coding in accordance with JavaEE Standards  
-Project Description：  
-As Working with a team of 10 developers on designing a remote files manage system part of a development team of 10 engineers, According to the requirement of the institute, we designed  a file management system including file processing, uploading and downloading in a distribution environment. This project’s techniques include Spring full stack framework and Hibernate ORM and Java multi-thread programming. For the client side, we used C# to compile.  
+Create framework infrastructure and Java coding in accordance with JavaEE Standards    
+Project Description:    
+As Working with a team of 10 developers on designing a remote files manage system part of a development team of 10 engineers, According to the requirement of the institute, we designed  a file management system including file processing, uploading and downloading in a distribution environment. This project’s techniques include Spring full stack framework and Hibernate ORM and Java multi-thread programming. For the client side, we used C# to compile.    
   
 * 2011/10 -- 2015/05  
 Alcatel-Lucent COM(Centre Operatoin Manager) – Fault Management  
-software environment：Java 1.7, RedHat 6.5 Jboss4.2.3GA, Oracle 11g, Corba Notification Service JMS,EJB  
-hardware environment：HP Gen8/Gen6  
-development tools：Eclipse,  
-Responsibilities：  
+software environment: Java 1.7, RedHat 6.5 Jboss4.2.3GA, Oracle 11g, Corba Notification Service JMS,EJB  
+hardware environment: HP Gen8/Gen6  
+development tools: Eclipse,  
+Responsibilities:   
 The key person responsible for the development of Fault Management module   
 Design and develop new features as well as fix bugs and technical support, based on client’s feedback  
 Team representative to communicate with outside development teams to validate feasibility of creative implementation  
 Redesign and adapt the legacy interfaces to interact with a new Web UI by using AngularJS and intermediate layer using Django  
-Project Description：  
-This is an on-going project for Alcatel-Lucent I ‘ve been working for 3 years, a large-scale network management system which involves almost one hundred developers aiming for proving customers with high expansibility and flexibility to manage a large network environment.,  Ddesigners and engineers are throughout the world (mainly in US, France & China) to maintain and develop it. The core technique includes Java EE, Linux K Shell script and Oracle Database. This product is primarily divided into 4 parts: Fault Management, Performance Management, Network Element Provisioning and Security authentication system. I am primarily responsible for development of the Fault System.  
+Project Description:   
+This is an on-going project for Alcatel-Lucent I ‘ve been working for 3 years, a large-scale network management system which involves almost one hundred developers aiming for proving customers with high expansibility and flexibility to manage a large network environment.,  Ddesigners and engineers are throughout the world (mainly in US, France & China) to maintain and develop it. The core technique includes Java EE, Linux K Shell script and Oracle Database. This product is primarily divided into 4 parts: Fault Management, Performance Management, Network Element Provisioning and Security authentication system. I am primarily responsible for development of the Fault System.    
   
-* 2010/12 -- 2011/12
-Alcatel Shanghai Bell WAM& Alcatel Lucent WLAN management
-software environment：Java Flex Mysql
-hardware environment：x86
-development tools：Eclipse, Flex Builder Spring Mybatis Shell
-Responsibilities：
-As a member of 5 persons agile team, to develop Alcatel Shanghai Bell WAM & Alcatel Lucent WLAN management, which using the same architecture, including Spring 2.5 Mybatis 3.0 Mysql6.0. I was responsible for  back-end designing and DB table defining.
-Project Description：
-These two projects are all B/S and used to manage the access network management. Server side use adventNet to communicate the network elements, business logical processing. 
-Front side used Flex as the presentation layer, achieved via Twaver framework which is a famous network topology  framework.
+* 2010/12 -- 2011/12  
+Alcatel Shanghai Bell WAM& Alcatel Lucent WLAN management  
+software environment: Java Flex Mysql  
+hardware environment: x86  
+development tools: Eclipse, Flex Builder Spring Mybatis Shell  
+Responsibilities:  
+As a member of 5 persons agile team, to develop Alcatel Shanghai Bell WAM & Alcatel Lucent WLAN management, which using the same architecture, including Spring 2.5 Mybatis 3.0 Mysql6.0. I was responsible for  back-end designing and DB table defining.  
+Project Description:  
+These two projects are all B/S and used to manage the access network management. Server side use adventNet to communicate the network elements, business logical processing.   
+Front side used Flex as the presentation layer, achieved via Twaver framework which is a famous network topology  framework.  
   
 ## Education Background
-* 2005/09 -- 2009/09
-Qingdao University of Science and Technology|Information Engineering|Bachelor    
+* 2005/09 -- 2009/09  
+Qingdao University of Science and Technology|Information Engineering|Bachelor      
 
-## Training
-* 2009/02 -- 2009/03  
-**Thoughtworks**
-### Training Course：
-OOA/D design patterns  
-Training Location：BeiJing  
-Description in Details：
-General training about multiple design patterns in Java development.  
+## Training  
+* 2009/02 -- 2009/03    
+**Thoughtworks**  
+### Training Course: 
+OOA/D design patterns    
+Training Location: BeiJing    
+Description in Details:  
+General training about multiple design patterns in Java development.    
 
 
 * 2008/12 -- 2009/06  
-**Tarena IT Education Compay**
-### Training Course：
-Senior Java Development Courses Tarena IT Education Compay
-Training Location：Beijing  
-Description in Details：Courses include Linux, SQL, JavaScript and Java development.  
-Two commercial level projects had been done when during the training courses, which are telecom billing system&online shopping web site.
+**Tarena IT Education Compay**  
+### Training Course:   
+Senior Java Development Courses Tarena IT Education Company  
+Training Location: Beijing  
+Description in Details: Courses include Linux, SQL, JavaScript and Java development.    
+Two commercial level projects had been done when during the training courses, which are Telecom billing system&online shopping web site.  
  
 ## Language Skills
-English:proficient
-Mandarin:native
+English:proficient  
+Mandarin:native  
 
 ## Programming Skills
 ### Backend
-JavaEE, JMS, SpringMVC, SpringBoot, Hibernate, ElasticSearch, Redis
-Akka,RxJava,Functional Programming
+JavaEE, JMS, SpringMVC, SpringBoot, Hibernate, ElasticSearch, Redis  
+Akka,RxJava,Functional Programming  
 ### Frontend
-AngularJS, JQuery, Gulp/Bower, NPM
+AngularJS, React, JQuery, Gulp/Bower, NPM
 ### DevOps
-Github, JIRA, Jenkins, Docker, Maven/Gradle/SBT, IntelliJ IDEA
+GitHub, JIRA, Jenkins, Docker, Maven/Gradle/SBT, IntelliJ IDEA
 ### Testing
 Junit, Spock, ScalaTest
 
 ## Professional Skills(months)
-|skill|level|months|
-|----|-----|---|
-|Java SE/EE|expert|60|
-|RDBMS|proficient|60|
-|Git|proficient|24|  
-|Groovy|average|10|
-|Scala|average|6|
-|PHP|average|6|
+Java, Kotlin, Groovy, Scala, JavaScript, Python, PHP, Linux Script,
 
 
 
