@@ -1,7 +1,6 @@
 # Yufei Liu
 
-Male| 6 Years' Experience| Born in 1985/ 5 China  
-Location: Hamilton New Zealand|Bachelor| Studying in Wintec Graduate Diploma  
+Location: Hamilton New Zealand|Bachelor  
 E-mail: flying3615@163.com  
 
 [My Github repository](https://github.com/flying3615)  
