@@ -11,9 +11,7 @@ E-mail：flying3615@163.com
 >I have more than 5 Years of experience in Java SE/Java EE development and design, including 3 years of huge-scale JAVA program development experience with solid knowledge of JAVA enterprise and JAVA core programming, including but not limit to Web server development expertise. I've served as a senior Java developer on a major project for Alcatel-Lucent Telecom Company(merged by Nokia now) with the main responsibilities of designing and architect new features requested by customer for the product which is a core network management system.
 Currently, I'm severing to a relatively small but pretty dynamic and vibrant company which going to IPO.  
 My responsibilities include witting technical architecture document and monitoring projects schedules, as well as providing development guideline,etc.  
-Besides Java,  I am also a omnivorous developer and am familiar with Groovy, Python and Linux shell script language, as well as using front-side framework like Angular.JS, Javascript, and JQuery.  
-Currently I'm on a [project](https://github.com/flying3615/cv) which is constructed by [Jhipster](https://jhipster.github.io/presentation/#/) as full-stack tech, which is a web crawler to find Seek.co.nz jobs by different programming languages.
-With the ElasticSearch, it can find the suitable job much easier than Seek itself.
+Besides Java,  I am also a omnivorous developer and am familiar with Groovy, Python and Linux shell script language, as well as using front-side framework like Angular.JS, Javascript, and JQuery. 
 I'm also a big fan of Scala and Kotlin, moderner languages than Java, supporting pure functional programming and making concurrent programming much easier. 
 I've used Scala and its serial tech stack libraries to develop a [small full inverted index searcher](https://github.com/flying3615/SearchEngine) for my GD homework
  
@@ -31,9 +29,23 @@ I've used Scala and its serial tech stack libraries to develop a [small full inv
 Joined the team as a senior Java programmer, which job mainly was focusing on website Optimization
 and Architecture refinement. With using react architecture, the throughtput of website enhanced for 4 times.
 The refinement also includes Performance testing(Gatling), code Analysis(SonarQube) and Jira-Jenkins Integration.
-I've setup those DevOps tools by myself for the company.
-Technologies Utilized:
+I've setup those DevOps tools by myself for the company.    
+***Technologies Utilized:***   
 Java8, SpringMVC, Hibernate, Redis, MongoDB.
+
+**2016/07 - 2016/08**   
+**F6 Digital Media & Marketing**  
+**IT Service/General IT**  
+### Job Description:  
+**Internship**  
+**WordPress Web Developer**
+
+Worked alongside with other developers to development & deliver high quality clients' websites.
+Daily websites maintenance(Data Backup/Restore)
+Websites migration  
+***Technologies Utilized:***  
+WordPress, Docker, MySQL.
+
 
 **2010/11 - 2016/05**   
 **Qingdao Centling Information Technology Co., Ltd.|Technic Leader**  
@@ -44,8 +56,8 @@ Java8, SpringMVC, Hibernate, Redis, MongoDB.
 
 Making technic framework decision and base platform development.
 Training new staff for quickly picking up new technic tools and modern frameworks
-Leading team to finish several project including e-commerce, information manage system. 
-Technologies Utilized:
+Leading team to finish several project including e-commerce, information manage system.   
+***Technologies Utilized:***  
 Jhipster,AngularJS1, Groovy on Grails,Docker,PHP
 
 
@@ -59,8 +71,8 @@ This is an on-going project for Alcatel-Lucent I ‘ve been working for 3 years,
 a large-scale network management system which involves almost one hundred developers aiming for proving customers with high expandability and flexibility to manage a large network environment.,  
 Designers and engineers are throughout the world (mainly in US, France & China) to maintain and develop it. 
 The core technique includes Java EE, Linux K Shell script and Oracle Database. 
-This product is primarily divided into 4 parts: Fault Management, Performance Management, Network Element Provisioning and Security authentication system. I am primarily responsible for development of the Fault System.
-Technologies Utilized:
+This product is primarily divided into 4 parts: Fault Management, Performance Management, Network Element Provisioning and Security authentication system. I am primarily responsible for development of the Fault System.  
+***Technologies Utilized:***  
 JavaEE(JMS,EJB,JMX,etc), JBoss, Linux Shell, Oracle, Corba Notification Service
 
 **2009/08 - 2010/11**  
@@ -79,15 +91,15 @@ It’s a typical DB drive system with a Web UI exposing to company stuff to deal
 
 My role and responsibilities were as follows:
 Develop and achieve data flow invocation from Web interface to Server Side communication
-Develop web page with JavaScript
-Technologies Utilized:
+Develop web page with JavaScript   
+***Technologies Utilized:***   
 Java, jQuery, DWR, Spring
 
 ## Project Experience
 * 2015/05 -- 2016/05  
 Several E-commercial projects  
 software environment：LAMP  
-hardware environment：Ali Cloud, ECS+RDS  
+hardware environment：AWS, ECS+RDS  
 development tools：IntelliJ Idea  
 Responsibilities：  
 Leading a team to finish customer required web site building. Main job was to develop back-end PHP development and some front-end JS&CSS optimize.  
