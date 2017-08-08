@@ -173,14 +173,15 @@ Mandarin:native
 ### Backend
 JavaEE, JMS, SpringMVC, SpringBoot, Hibernate, ElasticSearch, Redis  
 Akka,RxJava,Functional Programming  
+
 ### Frontend
-AngularJS, React, JQuery, Gulp/Bower, NPM
+AngularJS, React, JQuery, Gulp/Bower, NPM  
 ### DevOps
-GitHub, JIRA, Jenkins, Docker, Maven/Gradle/SBT, IntelliJ IDEA
+GitHub, JIRA, Jenkins, Docker, Maven/Gradle/SBT, IntelliJ IDEA  
 ### Testing
 Junit, Spock, ScalaTest
 
-## Professional Skills(months)
+## Professional Skills
 Java, Kotlin, Groovy, Scala, JavaScript, Python, PHP, Linux Script,
 
 
