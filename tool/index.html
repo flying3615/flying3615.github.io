@@ -1,0 +1,88 @@
+---
+layout: default
+title: Yufei Liu's Blog
+blog: passive
+home: passive
+cv: passive
+tool: active
+projects: passive
+---
+
+
+<link rel="stylesheet" type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+<style>
+    ul > li {
+        display: inline-block;
+    }
+</style>
+<div class="container">
+
+    <input class="form-control" type="file" id="files" name="files[]" multiple/>
+
+    <hr/>
+
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-total" role="tabpanel" aria-labelledby="nav-total-tab">
+            <div class="slidecontainer">
+                <b>$10</b>
+                <input type="range" min="10" max="1000" value="50" step="10" class="slider" id="myRange">
+                <b>$1000</b>
+                <div id="scaleMoney"></div>
+            </div>
+            <div>
+                <button class="btn" id="resetBtn">Reset</button>
+            </div>
+            <section>
+                <div class="card" id="totalCard" style="display: none">
+                    <h5 class="card-header">Total Summary</h5>
+                    <div class="card-body">
+                        <div id="totalSumm" style="width: 1000px;height:500px;"></div>
+                    </div>
+                </div>
+            </section>
+            <br/>
+            <br/>
+            <section>
+                <div class="card" id="portionCard" style="display: none">
+                    <h5 class="card-header" id="pieCardTitle">Portion Summary</h5>
+                    <div class="card-body">
+                        <!--show it when pie chart showing, onclick-->
+                        <!-- dynamic table -->
+                        <input type="text" id="category" placeholder="customize category">
+                        <button id="addCategoryBtn">Add</button>
+                        <ul id="costCategory"></ul>
+                        <table id="dynamicTable" class="table">
+                        </table>
+                        <div id="custPieDetail" style="width: 800px;height:500px; display: none"></div>
+                        <div id="pieDetail" style="width: 800px;height:500px;"></div>
+                    </div>
+                </div>
+            </section>
+            <br/>
+
+            <br/>
+            <section>
+                <div class="card" id="costDetailsCard" style="display: none">
+                    <h5 class="card-header" id="tableCardTitle">Cost Details</h5>
+                    <div class="card-body">
+                        <table id="detailTable" class="table">
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script>
+	//globe val & var
+	const eventBus = new EventBus()
+	let currentDate, moneyType, uniqCodes
+
+	function removeCategory(category) {
+		eventBus.post('rmCategory',category)
+	}
+</script>

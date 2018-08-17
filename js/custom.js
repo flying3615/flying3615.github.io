@@ -151,6 +151,7 @@ $(function () { // wait for document ready
 
         function getAjaxFiles(type) {
             $.ajax({
+                type: 'GET',
                 url: 'https://api.github.com/repos/flying3615/flying3615.github.io/contents/image/books/'+type,
                 success: function (data) {
                     $(data).each(function () {

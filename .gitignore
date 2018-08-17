@@ -49,3 +49,9 @@ fabric.properties
 
 .gitignore
 .idea/
+
+node_modules/
+src/assets/bundle.js
+
+.sass-cache
+.jekyll-metadata

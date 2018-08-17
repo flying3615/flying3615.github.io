@@ -7,7 +7,7 @@ body {
     font-size: 16px;
     /*background: no-repeat center center fixed;*/
     /*background-image: linear-gradient(145deg, #f4a35b, #f4655b 31%, #d16098 65%, #ca3469);*/
-    background-color: #f4655b;
+    background-color: #c4dfe6;
     transition: all 2s ease-out;
 }
 
@@ -25,7 +25,7 @@ body.meadow{
 
 body.moss{
     background-image: none;
-    background-color: #aebd38;
+    background-color: #90005d;
     transition: all 2s ease-out;
 }
 
@@ -486,4 +486,9 @@ blockquote h2.quote::after {
 /*cv blog color*/
 body > div.header > ul > li > a{
     color: white;
+}
+
+.navbar-inverse{
+    background-color: #fff;
+    box-shadow: 0px 1px 13px 0px;
 }

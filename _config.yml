@@ -7,3 +7,4 @@ kramdown:
   hard_wrap: false
   auto_ids: true
   syntax_highlighter: rouge
+exclude: ['node_modules']
