@@ -7,8 +7,10 @@ body {
     font-size: 16px;
     /*background: no-repeat center center fixed;*/
     /*background-image: linear-gradient(145deg, #f4a35b, #f4655b 31%, #d16098 65%, #ca3469);*/
-    background-color: #c4dfe6;
+    background-color: #3692f4;
     transition: all 2s ease-out;
+    margin: 0;
+    padding: 0;
 }
 
 body.waterfall{
@@ -25,7 +27,7 @@ body.meadow{
 
 body.moss{
     background-image: none;
-    background-color: #90005d;
+    background-color: #907490;
     transition: all 2s ease-out;
 }
 
@@ -491,4 +493,11 @@ body > div.header > ul > li > a{
 .navbar-inverse{
     background-color: #fff;
     box-shadow: 0px 1px 13px 0px;
+}
+
+nav.black {
+    background: rgba(0,0,0,0.8);
+    height: 100px;
+    padding:10px 100px;
+
 }

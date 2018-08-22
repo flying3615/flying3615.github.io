@@ -1,12 +1,14 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar  navbar-expand-lg navbar-light">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="/"><strong>(0 to life_span).filter(!rest).reduce(knowledge+new)</strong></a>
 		</div>
-		<ul class="nav navbar-nav navbar-right">
-			<li class="{{ page.blog }}"><a href="/blog" title="Blog">Blog</a></li>
-			<li class="{{ page.cv }}"><a href="/cv" title="CV">CV</a></li>
-			<li class="{{ page.tool }}"><a href="/tool" title="Tool">Tool</a></li>
-		</ul>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item {{ page.blog }}"><a class="nav-link" href="/blog" title="Blog">Blog</a></li>
+				<li class="nav-item {{ page.cv }}"><a class="nav-link" href="/cv" title="CV">CV</a></li>
+				<li class="nav-item {{ page.tool }}"><a class="nav-link" href="/tool" title="Tool">Tool</a></li>
+			</ul>
+		</div>
 	</div>
 </nav>
