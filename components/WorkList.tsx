@@ -76,12 +76,21 @@ function ProjectRow({ project: p, index, isOpen, onToggle }: RowProps) {
         <div className="project-media">
           <div className="media-num">{num}</div>
           {p.shotIframeSrc ? (
-            <iframe
-              src={p.shotIframeSrc}
-              className="media-iframe"
-              title={`${p.name} preview`}
-              loading="lazy"
-            />
+            <>
+              <iframe
+                src={p.shotIframeSrc}
+                className="media-iframe"
+                title={`${p.name} preview`}
+                loading="lazy"
+              />
+              <a
+                href={p.shotIframeSrc}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="media-iframe-overlay"
+                aria-label={`Open ${p.name} full screen`}
+              />
+            </>
           ) : (
             <div className="media-shot">
               <span>{p.shot}</span>
