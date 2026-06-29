@@ -33,10 +33,27 @@ export const PROJECTS: Project[] = [
     links: [{ label: 'Demo Deck', href: '../works/pinakes.html' }],
   },
   {
+    name: 'AutoRally',
+    eyebrow: 'Personal Project',
+    role: 'Creator',
+    shot: '[ badminton club app ]',
+    shotIframeSrc: '../works/autorally.html',
+    desc: 'A cross-platform desktop app for badminton club organizers — handling session check-in, smart court filling, fee tracking, analytics, and tournaments, all offline with no server required.',
+    tags: ['Electron', 'React', 'SQLite', 'TypeScript'],
+    details: [
+      'Built four core modules: session management, a live match panel with smart court generation, per-session analytics, and a fee/credit ledger.',
+      'Smart court-fill algorithm weighs skill level, wait time, and play history simultaneously to fill all courts in one pass.',
+      'Supports three tournament formats (round robin, single elimination, double elimination) with bracket management built in.',
+      'Ships as a fully offline app with no data leaving the machine — available on macOS, Windows, and Linux via Electron.',
+    ],
+    links: [{ label: 'Slide Deck', href: '../works/autorally.html' }],
+  },
+  {
     name: 'Online Survey System',
     eyebrow: '2021 — 2025 · Toitū Te Whenua LINZ',
     role: 'Full Stack Developer',
     shot: '[ survey platform ]',
+    shotIframeSrc: '../works/survey.html',
     desc: "A ground-up online survey platform for New Zealand's national land-information agency, replacing an ageing legacy system.",
     tags: ['React', 'TypeScript', 'Kotlin', 'Spring Boot'],
     details: [
