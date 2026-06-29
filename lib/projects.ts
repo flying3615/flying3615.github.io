@@ -8,6 +8,7 @@ export interface Project {
   eyebrow: string;
   role: string;
   shot: string;
+  shotIframeSrc?: string;
   desc: string;
   tags: string[];
   details: string[];
@@ -15,6 +16,22 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    name: 'Pinakes',
+    eyebrow: 'Open Source · Personal Project',
+    role: 'Creator & Maintainer',
+    shot: '[ knowledge platform ]',
+    shotIframeSrc: '../works/pinakes.html',
+    desc: 'A personal knowledge-management platform that ingests notes, tickets, and docs into a unified store — queryable by AI agents via MCP tools, with Atlassian integration, a personal wiki, and an extensible plugin system.',
+    tags: ['MCP', 'AI Agents', 'Atlassian', 'React', 'Node.js'],
+    details: [
+      'Built an ingest pipeline to pull knowledge from multiple sources (notes, tickets, docs) into a unified storage layer.',
+      'Developed an Atlassian connector for seamless Jira and Confluence integration.',
+      'Exposed knowledge retrieval as MCP tools, enabling AI agents to query personal and team context in real time.',
+      'Shipped a web portal with a personal wiki and an extensible plugin system for custom connectors.',
+    ],
+    links: [{ label: 'Demo Deck', href: '../works/pinakes.html' }],
+  },
   {
     name: 'Online Survey System',
     eyebrow: '2021 — 2025 · Toitū Te Whenua LINZ',
@@ -70,35 +87,5 @@ export const PROJECTS: Project[] = [
       'Developed on a Linux platform within Agile practices.',
     ],
     links: [],
-  },
-  {
-    name: 'Pinakes',
-    eyebrow: 'Open Source · Personal Project',
-    role: 'Creator & Maintainer',
-    shot: '[ knowledge platform ]',
-    desc: 'A personal knowledge-management platform that ingests notes, tickets, and docs into a unified store — queryable by AI agents via MCP tools, with Atlassian integration, a personal wiki, and an extensible plugin system.',
-    tags: ['MCP', 'AI Agents', 'Atlassian', 'React', 'Node.js'],
-    details: [
-      'Built an ingest pipeline to pull knowledge from multiple sources (notes, tickets, docs) into a unified storage layer.',
-      'Developed an Atlassian connector for seamless Jira and Confluence integration.',
-      'Exposed knowledge retrieval as MCP tools, enabling AI agents to query personal and team context in real time.',
-      'Shipped a web portal with a personal wiki and an extensible plugin system for custom connectors.',
-    ],
-    links: [{ label: 'Demo Deck', href: 'works/pinakes.html' }],
-  },
-  {
-    name: 'Another Side Project',
-    eyebrow: 'Open Source · 20XX',
-    role: 'Creator',
-    shot: '[ your screenshot ]',
-    desc: "Placeholder — a second slot for a personal project, experiment, or tool you're proud of.",
-    tags: ['Add', 'Tech', 'Tags'],
-    details: [
-      "Add highlights here. Tell me the details and I'll format them to match.",
-    ],
-    links: [
-      { label: 'GitHub', href: '#' },
-      { label: 'Live Demo', href: '#' },
-    ],
   },
 ];

@@ -75,9 +75,18 @@ function ProjectRow({ project: p, index, isOpen, onToggle }: RowProps) {
         {/* media */}
         <div className="project-media">
           <div className="media-num">{num}</div>
-          <div className="media-shot">
-            <span>{p.shot}</span>
-          </div>
+          {p.shotIframeSrc ? (
+            <iframe
+              src={p.shotIframeSrc}
+              className="media-iframe"
+              title={`${p.name} preview`}
+              loading="lazy"
+            />
+          ) : (
+            <div className="media-shot">
+              <span>{p.shot}</span>
+            </div>
+          )}
         </div>
 
         {/* content */}
