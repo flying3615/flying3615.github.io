@@ -1,10 +1,12 @@
+import Link from 'next/link';
+
 export default function Nav() {
   return (
     <nav className="nav">
-      <a href="/" className="nav-logo">YUFEI LIU</a>
+      <Link href="/" className="nav-logo">YUFEI LIU</Link>
       <div className="nav-links">
         <a href="#work">Work</a>
-        <a href="/">Resume</a>
+        <Link href="/">Resume</Link>
         <a href="mailto:gabriel.liu3615@gmail.com">Contact</a>
       </div>
     </nav>

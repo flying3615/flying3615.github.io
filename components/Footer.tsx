@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   const h2Ref = useRef<HTMLHeadingElement>(null);
@@ -54,7 +55,7 @@ export default function Footer() {
           </div>
           <div>
             <div className="fc-label">Resume</div>
-            <a href="/resume" className="fc-value">Full résumé →</a>
+            <Link href="/" className="fc-value">Full résumé →</Link>
           </div>
         </div>
         <div className="footer-bar">
