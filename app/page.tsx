@@ -1,17 +1,23 @@
-import Nav from '@/components/Nav';
-import Hero from '@/components/Hero';
+import ResumeNav from '@/components/ResumeNav';
+import ResumeHero from '@/components/ResumeHero';
 import CredentialStrip from '@/components/CredentialStrip';
-import WorkList from '@/components/WorkList';
-import Footer from '@/components/Footer';
+import ResumeSummary from '@/components/ResumeSummary';
+import ResumeExperience from '@/components/ResumeExperience';
+import ResumeSkills from '@/components/ResumeSkills';
+import ResumeEducation from '@/components/ResumeEducation';
+import ResumeFooter from '@/components/ResumeFooter';
 
-export default function Page() {
+export default function ResumePage() {
   return (
     <>
-      <Nav />
-      <Hero />
+      <ResumeNav />
+      <ResumeHero />
       <CredentialStrip />
-      <WorkList />
-      <Footer />
+      <ResumeSummary />
+      <ResumeExperience />
+      <ResumeSkills />
+      <ResumeEducation />
+      <ResumeFooter />
     </>
   );
 }
