@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -10,10 +9,10 @@ export default function Nav() {
   return (
     <>
       <nav className="nav">
-        <Link href="/" className="nav-logo">YUFEI LIU</Link>
+        <a href="/" className="nav-logo">YUFEI LIU</a>
         <div className="nav-links">
-          <Link href="/projects">Work</Link>
-          <Link href="/">Resume</Link>
+          <a href="#work">Work</a>
+          <a href="#summary">Resume</a>
           <a href="mailto:gabriel.liu3615@gmail.com">Contact</a>
         </div>
         <button className="nav-hamburger" onClick={() => setOpen(true)} aria-label="Open menu">
@@ -25,8 +24,8 @@ export default function Nav() {
         <div className="nav-mobile-overlay" onClick={close}>
           <div className="nav-mobile-menu" onClick={e => e.stopPropagation()}>
             <button className="nav-mobile-close" onClick={close} aria-label="Close menu">✕</button>
-            <Link href="/projects" className="nav-mobile-link" onClick={close}>Work</Link>
-            <Link href="/" className="nav-mobile-link" onClick={close}>Resume</Link>
+            <a href="#work" className="nav-mobile-link" onClick={close}>Work</a>
+            <a href="#summary" className="nav-mobile-link" onClick={close}>Resume</a>
             <a href="mailto:gabriel.liu3615@gmail.com" className="nav-mobile-link" onClick={close}>Contact</a>
           </div>
         </div>
