@@ -33,7 +33,7 @@ a { color: inherit; }
   font-weight: 700; font-size: 18px; letter-spacing: 3px;
   text-transform: uppercase; color: #fff; text-decoration: none;
 }
-.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
 .nav-links a {
   font-size: 13.008px; font-weight: 700; letter-spacing: 1.17px; line-height: 0.94;
   text-transform: uppercase; color: #fff; text-decoration: none; opacity: 0.85;
@@ -367,6 +367,8 @@ a { color: inherit; }
 @media (max-width: 768px) {
   /* Nav */
   .nav { padding: 20px; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 11px; letter-spacing: 0.8px; }
 
   /* Hero (projects page) */
   .hero-h1 { font-size: 52px; }

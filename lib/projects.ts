@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
     eyebrow: 'Open Source · Personal Project',
     role: 'Creator & Maintainer',
     shot: '[ knowledge platform ]',
-    shotIframeSrc: '../works/pinakes.html',
+    shotIframeSrc: './works/pinakes.html',
     desc: 'A personal knowledge-management platform that ingests notes, tickets, and docs into a unified store — queryable by AI agents via MCP tools, with Atlassian integration, a personal wiki, and an extensible plugin system.',
     tags: ['MCP', 'AI Agents', 'Atlassian', 'React', 'Node.js'],
     details: [
@@ -30,14 +30,14 @@ export const PROJECTS: Project[] = [
       'Exposed knowledge retrieval as MCP tools, enabling AI agents to query personal and team context in real time.',
       'Shipped a web portal with a personal wiki and an extensible plugin system for custom connectors.',
     ],
-    links: [{ label: 'Demo Deck', href: '../works/pinakes.html' }],
+    links: [{ label: 'Demo Deck', href: './works/pinakes.html' }],
   },
   {
     name: 'AutoRally',
     eyebrow: 'Personal Project',
     role: 'Creator',
     shot: '[ badminton club app ]',
-    shotIframeSrc: '../works/autorally.html',
+    shotIframeSrc: './works/autorally.html',
     desc: 'A cross-platform desktop app for badminton club organizers — handling session check-in, smart court filling, fee tracking, analytics, and tournaments, all offline with no server required.',
     tags: ['Electron', 'React', 'SQLite', 'TypeScript'],
     details: [
@@ -46,14 +46,14 @@ export const PROJECTS: Project[] = [
       'Supports three tournament formats (round robin, single elimination, double elimination) with bracket management built in.',
       'Ships as a fully offline app with no data leaving the machine — available on macOS, Windows, and Linux via Electron.',
     ],
-    links: [{ label: 'Slide Deck', href: '../works/autorally.html' }],
+    links: [{ label: 'Slide Deck', href: './works/autorally.html' }],
   },
   {
     name: 'Online Survey System',
     eyebrow: '2021 — 2025 · Toitū Te Whenua LINZ',
     role: 'Full Stack Developer',
     shot: '[ survey platform ]',
-    shotIframeSrc: '../works/survey.html',
+    shotIframeSrc: './works/survey.html',
     desc: "A ground-up online survey platform for New Zealand's national land-information agency, replacing an ageing legacy system.",
     tags: ['React', 'TypeScript', 'Kotlin', 'Spring Boot'],
     details: [
