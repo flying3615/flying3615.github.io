@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function ResumeNav() {
   return (
     <nav className="nav">
-      <Link href="/" className="nav-logo">YUFEI LIU</Link>
+      <Link href="/" className="nav-logo">Yufei Liu</Link>
       <div className="nav-links resume-nav-links">
         <a href="#summary">Summary</a>
         <a href="#experience">Experience</a>

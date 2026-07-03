@@ -103,7 +103,7 @@ export default function MeshCanvas({ playing, onHudUpdate }: Props) {
           const a = nodes[i], b = nodes[j];
           const dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;
           if (d2 < D * D) {
-            ctx.strokeStyle = `rgba(255,255,255,${((1 - Math.sqrt(d2) / D) * 0.20).toFixed(3)})`;
+            ctx.strokeStyle = `rgba(225,224,204,${((1 - Math.sqrt(d2) / D) * 0.20).toFixed(3)})`;
             ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
             links++;
           }
@@ -111,10 +111,10 @@ export default function MeshCanvas({ playing, onHudUpdate }: Props) {
       }
 
       for (const n of nodes) {
-        ctx.fillStyle = n.hub ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.42)';
+        ctx.fillStyle = n.hub ? 'rgba(225,224,204,0.92)' : 'rgba(225,224,204,0.42)';
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill();
         if (n.hub) {
-          ctx.strokeStyle = `rgba(255,255,255,${(0.10 + 0.10 * (0.5 + 0.5 * Math.sin(n.pulse))).toFixed(3)})`;
+          ctx.strokeStyle = `rgba(225,224,204,${(0.10 + 0.10 * (0.5 + 0.5 * Math.sin(n.pulse))).toFixed(3)})`;
           ctx.lineWidth = 1;
           ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 5, 0, Math.PI * 2); ctx.stroke();
         }
@@ -130,7 +130,7 @@ export default function MeshCanvas({ playing, onHudUpdate }: Props) {
           p.t = 0; p.sp = 0.22 + Math.random() * 0.5; continue;
         }
         const px = a.x + (b.x - a.x) * p.t, py = a.y + (b.y - a.y) * p.t;
-        ctx.fillStyle = 'rgba(255,255,255,0.95)';
+        ctx.fillStyle = 'rgba(225,224,204,0.95)';
         ctx.beginPath(); ctx.arc(px, py, 1.8, 0, Math.PI * 2); ctx.fill();
       }
 
