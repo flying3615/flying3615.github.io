@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 
 interface WordsPullUpProps {
@@ -11,6 +11,7 @@ interface WordsPullUpProps {
 export default function WordsPullUp({ text, className = '' }: WordsPullUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
+  const shouldReduceMotion = useReducedMotion();
   const words = text.split(' ');
 
   return (
@@ -22,8 +23,8 @@ export default function WordsPullUp({ text, className = '' }: WordsPullUpProps) 
         >
           <motion.span
             style={{ display: 'inline-block' }}
-            initial={{ y: 20, opacity: 0 }}
-            animate={isInView ? { y: 0, opacity: 1 } : {}}
+            initial={shouldReduceMotion ? false : { y: 20, opacity: 0 }}
+            animate={shouldReduceMotion || isInView ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
           >
             {word}

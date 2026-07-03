@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 
 export interface TextSegment {
@@ -16,6 +16,7 @@ interface WordsPullUpMultiStyleProps {
 export default function WordsPullUpMultiStyle({ segments, className = '' }: WordsPullUpMultiStyleProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
+  const shouldReduceMotion = useReducedMotion();
 
   const words = segments.flatMap((segment) =>
     segment.text.split(' ').map((word) => ({ word, className: segment.className ?? '' }))
@@ -31,8 +32,8 @@ export default function WordsPullUpMultiStyle({ segments, className = '' }: Word
           <motion.span
             className={item.className}
             style={{ display: 'inline-block' }}
-            initial={{ y: 20, opacity: 0 }}
-            animate={isInView ? { y: 0, opacity: 1 } : {}}
+            initial={shouldReduceMotion ? false : { y: 20, opacity: 0 }}
+            animate={shouldReduceMotion || isInView ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
           >
             {item.word}

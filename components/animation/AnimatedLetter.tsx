@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useTransform, type MotionValue } from 'framer-motion';
+import { motion, useTransform, useReducedMotion, type MotionValue } from 'framer-motion';
 
 interface AnimatedLetterProps {
   char: string;
@@ -17,13 +17,14 @@ export default function AnimatedLetter({
   scrollYProgress,
   italic = false,
 }: AnimatedLetterProps) {
+  const shouldReduceMotion = useReducedMotion();
   const charProgress = index / totalChars;
   const opacity = useTransform(scrollYProgress, [charProgress - 0.1, charProgress + 0.05], [0.2, 1]);
 
   return (
     <motion.span
       style={{
-        opacity,
+        opacity: shouldReduceMotion ? 1 : opacity,
         fontFamily: italic ? 'var(--font-instrument-serif), serif' : undefined,
         fontStyle: italic ? 'italic' : undefined,
       }}
