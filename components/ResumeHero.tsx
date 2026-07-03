@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import WordsPullUp from './animation/WordsPullUp';
 import WordsPullUpMultiStyle from './animation/WordsPullUpMultiStyle';
@@ -11,9 +14,16 @@ function LinkedInIcon({ size = 16 }: { size?: number }) {
 }
 
 export default function ResumeHero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    videoRef.current?.play().catch(() => {});
+  }, []);
+
   return (
     <div className="resume-hero">
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
