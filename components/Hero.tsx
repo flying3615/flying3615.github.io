@@ -2,12 +2,12 @@
 
 import { useState, useCallback } from 'react';
 import MeshCanvas from './MeshCanvas';
+import WordsPullUp from './animation/WordsPullUp';
+import WordsPullUpMultiStyle from './animation/WordsPullUpMultiStyle';
 
 export default function Hero() {
   const [playing, setPlaying] = useState(true);
   const [hudText, setHudText] = useState('UPTIME 00:00:00  ·  NODES 00  ·  LINKS 00');
-
-  // useCallback keeps the reference stable so MeshCanvas's ref sync effect fires minimally
   const handleHudUpdate = useCallback((text: string) => setHudText(text), []);
 
   return (
@@ -26,7 +26,7 @@ export default function Hero() {
         <button
           className="hud-btn"
           aria-label={playing ? 'Pause' : 'Play'}
-          onClick={() => setPlaying(p => !p)}
+          onClick={() => setPlaying((p) => !p)}
         >
           {playing ? '❚❚' : '►'}
         </button>
@@ -34,10 +34,18 @@ export default function Hero() {
 
       <div className="hero-content">
         <div className="hero-eyebrow">Portfolio · Selected Work</div>
-        <h1 className="hero-h1">Selected<br />Work</h1>
+        <h1 className="hero-h1">
+          <div><WordsPullUp text="Selected" /></div>
+          <div><WordsPullUp text="Work" /></div>
+        </h1>
         <p className="hero-desc">
-          Systems I&apos;ve shipped across banking, government, gaming and telecom — and
-          open-source work on the side. Click any project to expand the detail.
+          <WordsPullUpMultiStyle
+            segments={[
+              { text: "Systems I've shipped across banking, government, gaming and telecom — and" },
+              { text: 'open-source work on the side.', className: 'italic-accent' },
+              { text: 'Click any project to expand the detail.' },
+            ]}
+          />
         </p>
       </div>
     </div>
