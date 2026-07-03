@@ -33,7 +33,7 @@ a { color: inherit; }
   font-weight: 700; font-size: 18px; letter-spacing: 3px;
   text-transform: uppercase; color: #fff; text-decoration: none;
 }
-.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
 .nav-links a {
   font-size: 13.008px; font-weight: 700; letter-spacing: 1.17px; line-height: 0.94;
   text-transform: uppercase; color: #fff; text-decoration: none; opacity: 0.85;
@@ -329,3 +329,105 @@ a { color: inherit; }
 .edu-years { font-size: 12px; font-weight: 400; line-height: 2; letter-spacing: 0.96px; text-transform: uppercase; color: #5a5a5f; }
 .edu-school { font-weight: 700; font-size: 24px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
 .edu-degree { font-size: 16px; line-height: 1.5; letter-spacing: 0.32px; color: #f0f0fa; opacity: 0.85; }
+
+/* ── Hamburger / mobile nav ── */
+.nav-hamburger {
+  display: none;
+  background: transparent; border: 1px solid rgba(255,255,255,0.5); border-radius: 9999px;
+  color: #fff; width: 40px; height: 40px; align-items: center; justify-content: center;
+  font-size: 20px; line-height: 1; padding: 0; cursor: pointer; transition: border-color 0.2s;
+}
+.nav-hamburger:hover { border-color: rgba(255,255,255,0.9); }
+.nav-mobile-overlay {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+  display: flex; align-items: flex-start; justify-content: flex-end;
+}
+.nav-mobile-menu {
+  background: #0a0a0a; border-left: 1px solid #3a3a3f;
+  width: 260px; height: 100%; padding: 24px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.nav-mobile-close {
+  align-self: flex-end; background: transparent; border: none; color: #fff;
+  font-size: 18px; cursor: pointer; padding: 8px; margin-bottom: 24px; opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.nav-mobile-close:hover { opacity: 1; }
+.nav-mobile-link {
+  font-size: 13.008px; font-weight: 700; letter-spacing: 1.17px; line-height: 1;
+  text-transform: uppercase; color: #fff; text-decoration: none; opacity: 0.85;
+  padding: 16px 8px; border-bottom: 1px solid #1a1a1f; transition: opacity 0.2s;
+}
+.nav-mobile-link:last-child { border-bottom: none; }
+.nav-mobile-link:hover { opacity: 1; }
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  /* Nav */
+  .nav { padding: 20px; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 11px; letter-spacing: 0.8px; }
+
+  /* Hero (projects page) */
+  .hero-h1 { font-size: 52px; }
+  .hero-content { padding: 0 20px 56px; }
+  .hero-status { right: 20px; }
+  .hero-hud { right: 20px; bottom: 20px; }
+
+  /* Credential strip — 3 columns */
+  .cred-grid { grid-template-columns: repeat(3, 1fr); }
+  .cred-cell:nth-child(3n) { border-right: none; }
+  .cred-cell:nth-child(n+4) { border-top: 1px solid #3a3a3f; }
+
+  /* Work list */
+  .work-inner { padding: 0 20px; }
+  .project-row { padding: 40px 0; }
+  .project-grid { grid-template-columns: 1fr; gap: 32px; }
+  .project-name { font-size: 36px; }
+
+  /* Footer */
+  .footer-inner { padding: 56px 20px; }
+  .footer-h2 { font-size: 36px; }
+
+  /* Resume hero */
+  .resume-hero-h1 { font-size: 52px; }
+  .resume-hero-content { padding: 0 20px 56px; }
+
+  /* Resume sections */
+  .resume-section { padding: 64px 20px; }
+  .resume-section-alt-inner { padding: 64px 20px; }
+  .section-title { font-size: 32px; }
+
+  /* Experience */
+  .exp-row { grid-template-columns: 1fr; gap: 16px; }
+
+  /* Skills */
+  .skills-cols { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Education */
+  .edu-row { grid-template-columns: 1fr; gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  /* Nav — hamburger replaces links */
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* Hero */
+  .hero-h1 { font-size: 36px; }
+  .hero { min-height: 420px; }
+
+  /* Credential strip — 2 columns */
+  .cred-grid { grid-template-columns: repeat(2, 1fr); }
+  .cred-cell:nth-child(3n) { border-right: 1px solid #3a3a3f; }
+  .cred-cell:nth-child(2n) { border-right: none; }
+  .cred-cell:nth-child(n+3) { border-top: 1px solid #3a3a3f; }
+
+  /* Resume hero */
+  .resume-hero-h1 { font-size: 36px; }
+
+  /* Footer */
+  .footer-h2 { font-size: 28px; }
+}
