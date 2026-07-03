@@ -1,40 +1,42 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { useScroll } from 'framer-motion';
 import { SUMMARY } from '@/lib/resume';
+import WordsPullUp from './animation/WordsPullUp';
+import AnimatedLetter from './animation/AnimatedLetter';
+
+const ITALIC_PHRASE = 'a vibe coding lover at heart';
+const ITALIC_START = SUMMARY.indexOf(ITALIC_PHRASE);
+const ITALIC_END = ITALIC_START + ITALIC_PHRASE.length;
 
 export default function ResumeSummary() {
-  const ref = useRef<HTMLDivElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: paragraphRef,
+    offset: ['start 0.8', 'end 0.2'],
+  });
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const items = Array.from(el.querySelectorAll<HTMLElement>('[data-reveal]'));
-    items.forEach(item => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(22px)';
-      item.style.transition = 'opacity 0.7s cubic-bezier(.22,.7,.25,1), transform 0.7s cubic-bezier(.22,.7,.25,1)';
-    });
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const el = e.target as HTMLElement;
-          el.style.opacity = '1'; el.style.transform = 'none';
-          observer.unobserve(el);
-        }
-      });
-    }, { rootMargin: '0px 0px -10% 0px' });
-    items.forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  const chars = SUMMARY.split('');
 
   return (
-    <div id="summary" className="resume-section" ref={ref}>
-      <div data-reveal className="section-header">
+    <div id="summary" className="resume-section">
+      <div className="section-header">
         <div className="section-num">01</div>
-        <h2 className="section-title">Summary</h2>
+        <h2 className="section-title"><WordsPullUp text="Summary" /></h2>
       </div>
-      <p data-reveal className="summary-text">{SUMMARY}</p>
+      <p ref={paragraphRef} className="summary-text">
+        {chars.map((char, i) => (
+          <AnimatedLetter
+            key={i}
+            char={char}
+            index={i}
+            totalChars={chars.length}
+            scrollYProgress={scrollYProgress}
+            italic={i >= ITALIC_START && i < ITALIC_END}
+          />
+        ))}
+      </p>
     </div>
   );
 }
