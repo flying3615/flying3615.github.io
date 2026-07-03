@@ -9,7 +9,7 @@ export default function Nav() {
   return (
     <>
       <nav className="nav">
-        <a href="/" className="nav-logo">YUFEI LIU</a>
+        <a href="/" className="nav-logo">Yufei Liu</a>
         <div className="nav-links">
           <a href="#summary">Summary</a>
           <a href="#experience">Experience</a>

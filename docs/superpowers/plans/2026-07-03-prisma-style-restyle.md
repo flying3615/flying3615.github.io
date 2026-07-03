@@ -731,14 +731,24 @@ git commit -m "feat: retint MeshCanvas network to cream palette, normalize nav w
 
 - [ ] **Step 1: Replace `components/ResumeHero.tsx` contents entirely**
 
+**Note:** the originally-planned code below imported a `Linkedin` icon from `lucide-react`, but the installed version (`lucide-react@1.23.0`) no longer exports brand/social icons at all (confirmed by inspecting `node_modules/lucide-react` directly — only generic icons like `Link`/`ExternalLink` remain). The code block below has already been corrected to use a small local inline SVG (`LinkedInIcon`) instead — use this version, not a `lucide-react` import, for the LinkedIn icon.
+
 ```tsx
 'use client';
 
 import { useState, useCallback } from 'react';
-import { ArrowRight, Linkedin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import MeshCanvas from './MeshCanvas';
 import WordsPullUp from './animation/WordsPullUp';
 import WordsPullUpMultiStyle from './animation/WordsPullUpMultiStyle';
+
+function LinkedInIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.114 20.452H3.558V9h3.556v11.452z" />
+    </svg>
+  );
+}
 
 export default function ResumeHero() {
   const [playing, setPlaying] = useState(true);
@@ -797,7 +807,7 @@ export default function ResumeHero() {
               rel="noopener noreferrer"
               className="resume-cta-secondary"
             >
-              <Linkedin size={16} />
+              <LinkedInIcon size={16} />
               LinkedIn
             </a>
           </div>
@@ -819,7 +829,7 @@ Run: `npm run dev`, open `http://localhost:3000/resume/` (note the `/resume/` `b
 - MeshCanvas network renders in cream tones, not white
 - "Yufei" / "Liu" pull up on load, stacked on two lines
 - Bio paragraph pulls up word-by-word with "Vibe coding lover." in italic serif
-- Email button is a cream pill with a black circle + arrow that widens/scales on hover; LinkedIn button shows a Linkedin icon
+- Email button is a cream pill with a black circle + arrow that widens/scales on hover; LinkedIn button shows the inline LinkedIn SVG icon
 
 Stop the dev server after confirming (`Ctrl+C`).
 
@@ -1518,3 +1528,5 @@ Only if Steps 1-3 required fixes; otherwise there's nothing new to commit for th
 - **Type consistency:** `StaggerCard`'s `index`/`className`/`children` props, `AnimatedLetter`'s `italic` prop, and `WordsPullUpMultiStyle`'s `TextSegment` type are defined once in Task 3 and used identically in every later task.
 - **No placeholders:** every step has complete, runnable code or an exact shell command with expected output. The one deferred-sounding note (MeshCanvas retint "implementation detail" from the spec) is resolved here as four exact string replacements, confirmed against the actual file contents.
 - **Deviation from spec, resolved during planning:** the spec described the Summary section as "heading via WordsPullUpMultiStyle with an italic accent, body via AnimatedLetter" — but the actual heading is just the single word "Summary" (nothing to split stylistically). Task 7 resolves this by keeping the heading plain (`WordsPullUp`, no italic) and instead giving `AnimatedLetter` an `italic` flag so the one accent phrase ("a vibe coding lover at heart") renders in italic serif *within* the per-character scroll reveal, rather than forcing an artificial split on a two-word heading.
+- **Deviation discovered mid-implementation (Task 5):** the spec's `ResumeHero` code imported a `Linkedin` icon from `lucide-react`, but the installed version (`lucide-react@1.23.0`) no longer exports brand/social icons at all. Resolved by defining a small local inline SVG (`LinkedInIcon`) directly in `ResumeHero.tsx` instead — the plan's Task 5 code block above has already been updated to reflect this.
+- **Accessibility fix inserted after Task 7 review (Task 7.5, commit `2e91b4f`):** a code-quality review of Task 7 flagged that the four new animation primitives (`WordsPullUp`, `WordsPullUpMultiStyle`, `AnimatedLetter`, `StaggerCard`, all from Task 3) dropped the `prefers-reduced-motion` guard that every pre-existing component in this codebase already had via `window.matchMedia('(prefers-reduced-motion: reduce)').matches`. Fixed by adding framer-motion's own `useReducedMotion()` hook to all four primitives — when the user prefers reduced motion, each primitive skips its entrance/scroll animation and renders directly in its final visible state (`initial={false}` combined with an unconditionally-resolved `animate` target, or a static `opacity: 1` in `AnimatedLetter`'s case). This restores parity with the codebase's pre-existing accessibility behavior at the primitive level, so all ~11 consumer components inherit the fix automatically rather than needing per-component patches.
