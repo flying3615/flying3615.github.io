@@ -1,36 +1,20 @@
-'use client';
-
-import { useState, useCallback } from 'react';
-import MeshCanvas from './MeshCanvas';
 import WordsPullUp from './animation/WordsPullUp';
 import WordsPullUpMultiStyle from './animation/WordsPullUpMultiStyle';
 
 export default function Hero() {
-  const [playing, setPlaying] = useState(true);
-  const [hudText, setHudText] = useState('UPTIME 00:00:00  ·  NODES 00  ·  LINKS 00');
-  const handleHudUpdate = useCallback((text: string) => setHudText(text), []);
-
   return (
     <div className="hero">
-      <MeshCanvas playing={playing} onHudUpdate={handleHudUpdate} />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="hero-bg-video"
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+      />
+      <div className="noise-overlay hero-noise" />
       <div className="hero-grad-1" />
       <div className="hero-grad-2" />
-
-      <div className="hero-status">
-        <span className="status-dot" />
-        <span className="status-label">Online</span>
-      </div>
-
-      <div className="hero-hud">
-        <span className="hud-time">{hudText}</span>
-        <button
-          className="hud-btn"
-          aria-label={playing ? 'Pause' : 'Play'}
-          onClick={() => setPlaying((p) => !p)}
-        >
-          {playing ? '❚❚' : '►'}
-        </button>
-      </div>
 
       <div className="hero-content">
         <div className="hero-eyebrow">Portfolio · Selected Work</div>

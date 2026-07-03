@@ -34,10 +34,6 @@ a { color: inherit; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-@keyframes livePulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.25; transform: scale(0.7); }
-}
 @keyframes detailIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: none; }
@@ -75,31 +71,12 @@ a { color: inherit; }
   position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 62%);
 }
-.hero-status {
-  position: absolute; top: 96px; right: 32px; z-index: 3;
-  display: flex; align-items: center; gap: 10px;
+.hero-bg-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
 }
-.status-dot {
-  width: 8px; height: 8px; border-radius: 9999px; background: var(--cream);
-  animation: livePulse 1.8s ease-in-out infinite;
+.hero-noise {
+  position: absolute; inset: 0; opacity: 0.7; mix-blend-mode: overlay; pointer-events: none;
 }
-.status-label {
-  font-size: 12px; font-weight: 700; line-height: 2; letter-spacing: 0.4px; color: var(--cream-alt);
-}
-.hero-hud {
-  position: absolute; bottom: 32px; right: 32px; z-index: 3;
-  display: flex; align-items: center; gap: 16px;
-}
-.hud-time {
-  font-family: ui-monospace, Menlo, Consolas, monospace;
-  font-size: 11px; letter-spacing: 1px; color: var(--cream-alt); white-space: nowrap;
-}
-.hud-btn {
-  width: 40px; height: 40px; border: 1px solid rgba(225, 224, 204, 0.5); border-radius: 9999px;
-  background: transparent; color: var(--cream); display: flex; align-items: center; justify-content: center;
-  cursor: pointer; font-size: 13px; line-height: 1; padding: 0; transition: border-color 0.2s;
-}
-.hud-btn:hover { border-color: rgba(225, 224, 204, 0.9); }
 .hero-content {
   position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;
   width: 100%; padding: 0 32px 72px;
