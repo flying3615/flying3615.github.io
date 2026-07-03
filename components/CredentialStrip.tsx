@@ -1,3 +1,5 @@
+import StaggerCard from './animation/StaggerCard';
+
 const CREDENTIALS = [
   { label: 'Experience', value: '10+ Years' },
   { label: 'Java', value: 'OCP SE 11' },
@@ -10,11 +12,11 @@ export default function CredentialStrip() {
   return (
     <div className="cred-strip">
       <div className="cred-grid">
-        {CREDENTIALS.map((c) => (
-          <div key={c.label} className="cred-cell">
+        {CREDENTIALS.map((c, i) => (
+          <StaggerCard key={c.label} index={i} className="cred-cell">
             <div className="cred-label">{c.label}</div>
             <div className="cred-value">{c.value}</div>
-          </div>
+          </StaggerCard>
         ))}
       </div>
     </div>
