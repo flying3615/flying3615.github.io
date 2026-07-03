@@ -1,27 +1,10 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
+import WordsPullUp from './animation/WordsPullUp';
 
 export default function ResumeFooter() {
-  const h2Ref = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const el = h2Ref.current;
-    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(22px)';
-    el.style.transition = 'opacity 0.7s cubic-bezier(.22,.7,.25,1), transform 0.7s cubic-bezier(.22,.7,.25,1)';
-    const observer = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { el.style.opacity = '1'; el.style.transform = 'none'; observer.disconnect(); }
-    }, { rootMargin: '0px 0px -8% 0px' });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <h2 className="footer-h2" ref={h2Ref}>Let&apos;s Build Something</h2>
+        <h2 className="footer-h2"><WordsPullUp text="Let's Build Something" /></h2>
         <div className="footer-contacts">
           <div className="contact-item">
             <div className="contact-label">Email</div>
@@ -44,7 +27,7 @@ export default function ResumeFooter() {
           </div>
         </div>
         <div className="footer-bar">
-          <span className="footer-name">YUFEI LIU</span>
+          <span className="footer-name">Yufei Liu</span>
           <span className="footer-tagline">Senior Full Stack Developer · Wellington, NZ</span>
         </div>
       </div>

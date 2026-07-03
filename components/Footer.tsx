@@ -1,39 +1,13 @@
-'use client';
-
-import { useRef, useEffect } from 'react';
 import Link from 'next/link';
+import WordsPullUp from './animation/WordsPullUp';
 
 export default function Footer() {
-  const h2Ref = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const el = h2Ref.current;
-    if (!el) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.7s cubic-bezier(.22,.7,.25,1), transform 0.7s cubic-bezier(.22,.7,.25,1)';
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.style.opacity = '1';
-          el.style.transform = 'none';
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '0px 0px -10% 0px' }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <h2 ref={h2Ref} className="footer-h2">
-          Let&apos;s Build<br />Something
+        <h2 className="footer-h2">
+          <div><WordsPullUp text="Let's Build" /></div>
+          <div><WordsPullUp text="Something" /></div>
         </h2>
         <div className="footer-contacts">
           <div>
@@ -59,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bar">
-          <div className="footer-name">YUFEI LIU</div>
+          <div className="footer-name">Yufei Liu</div>
           <div className="footer-tagline">Senior Full Stack Developer · Wellington, NZ</div>
         </div>
       </div>
