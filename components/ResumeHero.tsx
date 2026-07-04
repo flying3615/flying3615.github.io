@@ -82,11 +82,13 @@ function SimpleAutoplayHero() {
 
 const DAMPING = 0.08;
 const EPSILON = 0.0001;
+const FADE_OUT_START = 0.75;
 
 function ScrubHero() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const blackFadeRef = useRef<HTMLDivElement>(null);
   const targetProgress = useRef(0);
   const currentProgress = useRef(0);
   const rafRunning = useRef(false);
@@ -96,7 +98,8 @@ function ScrubHero() {
     const wrapper = wrapperRef.current;
     const video = videoRef.current;
     const textEl = textRef.current;
-    if (!wrapper || !video || !textEl) return;
+    const blackFadeEl = blackFadeRef.current;
+    if (!wrapper || !video || !textEl || !blackFadeEl) return;
 
     function applyTextFade(scrolled: number) {
       const fadeDistance = window.innerHeight * 0.3;
@@ -129,17 +132,24 @@ function ScrubHero() {
       }
     }
 
+    function applyProgress(progress: number) {
+      const duration = video!.duration;
+      if (duration && !Number.isNaN(duration)) {
+        video!.currentTime = progress * (duration - 0.1);
+      }
+      const fadeT = Math.min(Math.max((progress - FADE_OUT_START) / (1 - FADE_OUT_START), 0), 1);
+      blackFadeEl!.style.opacity = String(fadeT);
+    }
+
     function loop() {
       const diff = targetProgress.current - currentProgress.current;
       if (Math.abs(diff) > EPSILON) {
         currentProgress.current += diff * DAMPING;
-        const duration = video!.duration;
-        if (duration && !Number.isNaN(duration)) {
-          video!.currentTime = currentProgress.current * (duration - 0.1);
-        }
+        applyProgress(currentProgress.current);
         requestAnimationFrame(loop);
       } else {
         currentProgress.current = targetProgress.current;
+        applyProgress(currentProgress.current);
         rafRunning.current = false;
       }
     }
@@ -166,6 +176,7 @@ function ScrubHero() {
         <div className="noise-overlay hero-noise" />
         <div className="hero-grad-1" />
         <div className="hero-grad-2" />
+        <div ref={blackFadeRef} className="hero-black-fade" />
         <div ref={textRef} className="resume-hero-text-layer">
           <HeroContent />
         </div>
