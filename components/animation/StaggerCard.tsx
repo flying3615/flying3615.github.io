@@ -7,9 +7,11 @@ interface StaggerCardProps {
   index: number;
   className?: string;
   children: ReactNode;
+  staggerStep?: number;
+  y?: number;
 }
 
-export default function StaggerCard({ index, className, children }: StaggerCardProps) {
+export default function StaggerCard({ index, className, children, staggerStep = 0.15, y = 0 }: StaggerCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const shouldReduceMotion = useReducedMotion();
@@ -18,9 +20,9 @@ export default function StaggerCard({ index, className, children }: StaggerCardP
     <motion.div
       ref={ref}
       className={className}
-      initial={shouldReduceMotion ? false : { scale: 0.95, opacity: 0 }}
-      animate={shouldReduceMotion || isInView ? { scale: 1, opacity: 1 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
+      initial={shouldReduceMotion ? false : { scale: 0.95, opacity: 0, y }}
+      animate={shouldReduceMotion || isInView ? { scale: 1, opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * staggerStep, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

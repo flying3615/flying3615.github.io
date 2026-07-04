@@ -11,6 +11,7 @@ import ResumeFooter from '@/components/ResumeFooter';
 export default function ResumePage() {
   return (
     <>
+      <div className="bg-noise page-noise-parallax" aria-hidden="true" />
       <Nav />
       <ResumeHero />
       <CredentialStrip />

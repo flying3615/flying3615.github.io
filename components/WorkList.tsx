@@ -30,7 +30,7 @@ export default function WorkList() {
           />
         </p>
         {PROJECTS.map((p, i) => (
-          <StaggerCard key={p.name} index={i} className="project-row">
+          <StaggerCard key={p.name} index={i} staggerStep={0.2} y={20} className="project-row">
             <ProjectRow project={p} index={i} isOpen={!!open[i]} onToggle={() => toggle(i)} />
           </StaggerCard>
         ))}
