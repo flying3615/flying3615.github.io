@@ -337,7 +337,9 @@ a { color: inherit; }
 /* ── Experience ── */
 .exp-row {
   display: grid; grid-template-columns: 300px 1fr; gap: 48px;
-  padding: 40px 0; border-top: 1px solid var(--border);
+}
+.exp-row.glass-card + .exp-row.glass-card {
+  margin-top: 24px;
 }
 .exp-company-name {
   font-weight: 700; font-size: 24px; letter-spacing: 0.2px;
