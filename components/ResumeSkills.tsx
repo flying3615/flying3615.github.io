@@ -1,5 +1,5 @@
 import { CORE_SKILLS, AI_SKILLS, CERTIFICATIONS } from '@/lib/resume';
-import StaggerCard from './animation/StaggerCard';
+import GlassReveal from './animation/GlassReveal';
 import WordsPullUp from './animation/WordsPullUp';
 
 export default function ResumeSkills() {
@@ -11,7 +11,7 @@ export default function ResumeSkills() {
       </div>
 
       <div className="skills-cols">
-        <StaggerCard index={0}>
+        <GlassReveal>
           <div className="skill-category-label">Core Stack</div>
           <div className="skill-tags">
             {CORE_SKILLS.map((s) => (
@@ -25,9 +25,9 @@ export default function ResumeSkills() {
               <span key={s} className="skill-tag skill-tag--ai">{s}</span>
             ))}
           </div>
-        </StaggerCard>
+        </GlassReveal>
 
-        <StaggerCard index={1}>
+        <GlassReveal>
           <div className="skill-category-label">Certifications</div>
           <div className="cert-list">
             {CERTIFICATIONS.map((c, i) => (
@@ -37,7 +37,7 @@ export default function ResumeSkills() {
               </div>
             ))}
           </div>
-        </StaggerCard>
+        </GlassReveal>
       </div>
     </div>
   );
