@@ -70,7 +70,7 @@ function SimpleAutoplayHero() {
         muted
         playsInline
         className="hero-bg-video"
-        src="/resume/videos/hero-bg.mp4"
+        src="/videos/hero-bg.mp4"
       />
       <div className="noise-overlay hero-noise" />
       <div className="hero-grad-1" />
@@ -171,7 +171,7 @@ function ScrubHero() {
           playsInline
           preload="auto"
           className="hero-bg-video"
-          src="/resume/videos/hero-bg.mp4"
+          src="/videos/hero-bg.mp4"
         />
         <div className="noise-overlay hero-noise" />
         <div className="hero-grad-1" />
