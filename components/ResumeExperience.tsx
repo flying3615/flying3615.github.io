@@ -1,5 +1,5 @@
 import { EXPERIENCES } from '@/lib/resume';
-import StaggerCard from './animation/StaggerCard';
+import GlassReveal from './animation/GlassReveal';
 import WordsPullUp from './animation/WordsPullUp';
 
 export default function ResumeExperience() {
@@ -11,8 +11,8 @@ export default function ResumeExperience() {
           <h2 className="section-title"><WordsPullUp text="Experience" /></h2>
         </div>
 
-        {EXPERIENCES.map((exp, i) => (
-          <StaggerCard key={exp.company} index={i} className="exp-row">
+        {EXPERIENCES.map((exp) => (
+          <GlassReveal key={exp.company} className="exp-row">
             <div>
               <div className="exp-company-name">{exp.company}</div>
               <div className="exp-meta">{exp.location}</div>
@@ -34,7 +34,7 @@ export default function ResumeExperience() {
                 </div>
               ))}
             </div>
-          </StaggerCard>
+          </GlassReveal>
         ))}
       </div>
     </div>
