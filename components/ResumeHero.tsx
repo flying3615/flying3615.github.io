@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import WordsPullUp from './animation/WordsPullUp';
 import WordsPullUpMultiStyle from './animation/WordsPullUpMultiStyle';
@@ -13,7 +13,48 @@ function LinkedInIcon({ size = 16 }: { size?: number }) {
   );
 }
 
-export default function ResumeHero() {
+function HeroContent() {
+  return (
+    <div className="resume-hero-content">
+      <div>
+        <div className="resume-hero-eyebrow">Senior Full Stack Developer · 10+ Years</div>
+        <h1 className="resume-hero-h1">
+          <div><WordsPullUp text="Yufei" /></div>
+          <div><WordsPullUp text="Liu" /></div>
+        </h1>
+        <p className="resume-hero-bio">
+          <WordsPullUpMultiStyle
+            segments={[
+              {
+                text: 'Building resilient, high-throughput systems across banking, government, gaming and telecom — from the JVM to the modern frontend.',
+              },
+              { text: 'Vibe coding lover.', className: 'italic-accent' },
+            ]}
+          />
+        </p>
+        <div className="resume-ctas">
+          <a href="mailto:gabriel.liu3615@gmail.com" className="resume-cta-primary">
+            Email
+            <span className="resume-cta-primary-icon">
+              <ArrowRight size={16} />
+            </span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yufei-liu-92766a66"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-cta-secondary"
+          >
+            <LinkedInIcon size={16} />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SimpleAutoplayHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -34,43 +75,113 @@ export default function ResumeHero() {
       <div className="noise-overlay hero-noise" />
       <div className="hero-grad-1" />
       <div className="hero-grad-2" />
+      <HeroContent />
+    </div>
+  );
+}
 
-      <div className="resume-hero-content">
-        <div>
-          <div className="resume-hero-eyebrow">Senior Full Stack Developer · 10+ Years</div>
-          <h1 className="resume-hero-h1">
-            <div><WordsPullUp text="Yufei" /></div>
-            <div><WordsPullUp text="Liu" /></div>
-          </h1>
-          <p className="resume-hero-bio">
-            <WordsPullUpMultiStyle
-              segments={[
-                {
-                  text: 'Building resilient, high-throughput systems across banking, government, gaming and telecom — from the JVM to the modern frontend.',
-                },
-                { text: 'Vibe coding lover.', className: 'italic-accent' },
-              ]}
-            />
-          </p>
-          <div className="resume-ctas">
-            <a href="mailto:gabriel.liu3615@gmail.com" className="resume-cta-primary">
-              Email
-              <span className="resume-cta-primary-icon">
-                <ArrowRight size={16} />
-              </span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/yufei-liu-92766a66"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-cta-secondary"
-            >
-              <LinkedInIcon size={16} />
-              LinkedIn
-            </a>
-          </div>
+const DAMPING = 0.08;
+const EPSILON = 0.0001;
+
+function ScrubHero() {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const targetProgress = useRef(0);
+  const currentProgress = useRef(0);
+  const rafRunning = useRef(false);
+  const ticking = useRef(false);
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    const video = videoRef.current;
+    const textEl = textRef.current;
+    if (!wrapper || !video || !textEl) return;
+
+    function applyTextFade(scrolled: number) {
+      const fadeDistance = window.innerHeight * 0.3;
+      const t = Math.min(Math.max(scrolled / fadeDistance, 0), 1);
+      textEl!.style.opacity = String(1 - t);
+      textEl!.style.transform = `translateY(${-40 * t}px)`;
+    }
+
+    function startLoopIfNeeded() {
+      if (!rafRunning.current) {
+        rafRunning.current = true;
+        requestAnimationFrame(loop);
+      }
+    }
+
+    function computeTarget() {
+      const rect = wrapper!.getBoundingClientRect();
+      const scrollableDistance = rect.height - window.innerHeight;
+      const scrolled = -rect.top;
+      targetProgress.current = Math.min(Math.max(scrolled / scrollableDistance, 0), 1);
+      applyTextFade(Math.max(scrolled, 0));
+      ticking.current = false;
+      startLoopIfNeeded();
+    }
+
+    function onScroll() {
+      if (!ticking.current) {
+        ticking.current = true;
+        requestAnimationFrame(computeTarget);
+      }
+    }
+
+    function loop() {
+      const diff = targetProgress.current - currentProgress.current;
+      if (Math.abs(diff) > EPSILON) {
+        currentProgress.current += diff * DAMPING;
+        const duration = video!.duration;
+        if (duration && !Number.isNaN(duration)) {
+          video!.currentTime = currentProgress.current * (duration - 0.1);
+        }
+        requestAnimationFrame(loop);
+      } else {
+        currentProgress.current = targetProgress.current;
+        rafRunning.current = false;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    computeTarget();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  return (
+    <div ref={wrapperRef} className="resume-hero-scrub-wrapper">
+      <div className="resume-hero">
+        <video
+          ref={videoRef}
+          muted
+          playsInline
+          preload="auto"
+          className="hero-bg-video"
+          src="/resume/videos/hero-bg.mp4"
+        />
+        <div className="noise-overlay hero-noise" />
+        <div className="hero-grad-1" />
+        <div className="hero-grad-2" />
+        <div ref={textRef} className="resume-hero-text-layer">
+          <HeroContent />
         </div>
       </div>
     </div>
   );
+}
+
+export default function ResumeHero() {
+  const [useScrub, setUseScrub] = useState(false);
+
+  useEffect(() => {
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setUseScrub(isDesktop && !reducedMotion);
+  }, []);
+
+  return useScrub ? <ScrubHero /> : <SimpleAutoplayHero />;
 }
