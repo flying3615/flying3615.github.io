@@ -273,6 +273,36 @@ a { color: inherit; }
 }
 .resume-cta-secondary:hover { border-color: var(--cream); }
 
+/* ── Scroll-scrub hero (desktop only) ── */
+.resume-hero-scrub-wrapper {
+  position: relative;
+  height: 300vh;
+}
+.resume-hero-scrub-wrapper .resume-hero {
+  position: sticky;
+  top: 0;
+}
+.resume-hero-text-layer {
+  will-change: opacity, transform;
+}
+
+/* ── Glassmorphism reveal card ── */
+.glass-card {
+  background: rgba(225, 224, 204, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(225, 224, 204, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  filter: blur(8px);
+  opacity: 0;
+  transition: filter 0.6s ease-out, opacity 0.6s ease-out;
+}
+.glass-card.is-visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
 /* ── Resume sections ── */
 .resume-section { max-width: 1200px; margin: 0 auto; padding: 96px 32px; scroll-margin-top: 80px; }
 .resume-section-alt { border-top: 1px solid var(--border); background: var(--bg-card); scroll-margin-top: 80px; }
