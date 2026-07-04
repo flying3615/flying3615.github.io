@@ -36,6 +36,11 @@ The originally-requested technique (extract every video frame via `createImageBi
 - As `currentProgress` moves through the first 30% of the *first 30vh of scroll distance into the pin* (not 30% of the full 300vh — specifically the first 30vh of scroll, matching the original request), the text layer's `opacity` linearly interpolates to `0` and its `transform: translateY(...)` moves it upward, so it visually exits before the rest of the scrub plays out.
 - Implemented as plain CSS custom properties driven by the same scroll-progress calculation already computed for the video (no separate observer needed) — set via inline style from the same scroll handler, not a second listener.
 
+### Black fade-out layer (added after live demo)
+- After the base scrub hero was demoed, the user felt the video kept scrubbing with nothing else happening for most of the pinned range, then released abruptly into the black-background content below. To smooth that transition, a `.hero-black-fade` overlay (`background: #000000`, `opacity: 0` at rest) fades in from `0` to `1` opacity during the final 25% of `currentProgress` (`FADE_OUT_START = 0.75`): `fadeT = clamp((currentProgress - 0.75) / 0.25, 0, 1)`.
+- This is applied from the same damped `currentProgress` value the video scrub already uses (via a shared `applyProgress()` helper), not the raw scroll position, so it feels connected to the same "silk-smooth" motion rather than snapping.
+- By the time the pinned range ends, the hero is fully black, blending seamlessly into the content section that follows instead of cutting from a full video frame straight to the next section.
+
 ### Mobile / reduced-motion fallback
 - At viewport widths below `768px`, or when `prefers-reduced-motion: reduce` is set, the scroll-scrub mechanism is skipped entirely — no pinned wrapper, no scroll listener, no rAF loop. The hero renders with the existing `autoPlay loop muted playsInline` video exactly as it does today (already fixed for iOS autoplay in a prior session and re-encoded to ~575KB for size).
 - This is a build-time/mount-time branch (checked once on mount via `matchMedia`), not a runtime performance-detection fallback — reliably detecting "is scrubbing too janky" at runtime was explicitly considered and rejected as fragile.
