@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
       'Analysed the legacy system in depth and migrated its functionality into the new platform without data loss.',
       'Helped shape front-end standards and mentored developers on the delivery team.',
     ],
-    links: [{ label: 'Case Study', href: '#' }],
+    links: [{ label: 'Case Study', href: './works/survey.html' }],
   },
   {
     name: 'ANZ Internet Banking',
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
       'Partnered with external teams to develop and deploy new microservices.',
       'Held an on-call roster to keep the platform highly available.',
     ],
-    links: [{ label: 'Case Study', href: '#' }],
+    links: [],
   },
   {
     name: 'Next-Gen Betting System',
