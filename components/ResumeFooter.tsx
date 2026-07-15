@@ -22,6 +22,23 @@ export default function ResumeFooter() {
             </a>
           </div>
           <div className="contact-item">
+            <div className="contact-label">GitHub</div>
+            <a
+              href="https://github.com/flying3615"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              flying3615 →
+            </a>
+          </div>
+          <div className="contact-item">
+            <div className="contact-label">Résumé</div>
+            <a href="/resume-yufei-liu.pdf" target="_blank" rel="noopener noreferrer" className="contact-link">
+              Download PDF →
+            </a>
+          </div>
+          <div className="contact-item">
             <div className="contact-label">Location</div>
             <div className="contact-link" style={{ cursor: 'default' }}>Paraparaumu, Wellington, NZ</div>
           </div>
