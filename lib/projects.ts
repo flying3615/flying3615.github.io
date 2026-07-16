@@ -21,6 +21,7 @@ export const PROJECTS: Project[] = [
     eyebrow: 'Toitū Te Whenua LINZ · Internal Engineering Tooling',
     role: 'Creator & Maintainer',
     shot: '[ knowledge platform ]',
+    shotIframeSrc: './works/pinakes.html',
     desc: 'A production Graph RAG knowledge platform that maps a large multi-repo engineering org — classifying domains, indexing code symbols, and modelling cross-repo dependency graphs — then serves that context to AI coding agents in real time via MCP.',
     tags: ['MCP', 'AI Agents', 'Graph RAG', 'React', 'Node.js'],
     details: [
