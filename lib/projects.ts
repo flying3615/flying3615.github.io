@@ -37,6 +37,7 @@ export const PROJECTS: Project[] = [
     eyebrow: 'Toitū Te Whenua LINZ · Internal Engineering Tooling',
     role: 'Creator',
     shot: '[ agent tooling ]',
+    shotIframeSrc: './works/pinakes-plugins.html',
     desc: 'A Claude Code skill library and plugin registry that surfaces the Pinakes knowledge base as ready-to-run agent skills — turning cross-repo questions into single tool calls and eliminating manual grepping.',
     tags: ['Claude Code', 'MCP', 'Developer Tooling', 'AI Agents'],
     details: [
@@ -44,7 +45,7 @@ export const PROJECTS: Project[] = [
       'Built a lightweight plugin registry so any engineer can install the skill suite without cloning or running the full knowledge-base source.',
       'Adopted daily across the engineering team — measurably cutting manual grepping and reducing blind cross-repo exploration.',
     ],
-    links: [],
+    links: [{ label: 'Case Study', href: './works/pinakes-plugins.html' }],
   },
   {
     name: 'AutoRally',
