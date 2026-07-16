@@ -18,7 +18,7 @@ export interface EducationEntry {
 }
 
 export const SUMMARY =
-  'Senior full stack developer with over a decade of professional experience delivering mission-critical software across internet banking, national betting infrastructure, government land-information systems and telecom network management. Equally fluent in the JVM — Java, Kotlin, Spring Boot — and the modern web — TypeScript and React. Oracle Certified Professional Java SE 11 Developer, Certified Kubernetes Application Developer and Administrator, and AWS Certified Solutions Architect Professional. Pragmatic, delivery-focused, and a vibe coding lover at heart.';
+  'Senior full stack developer with over a decade of professional experience delivering mission-critical software across internet banking, national betting infrastructure, government land-information systems and telecom network management. Equally fluent in the JVM — Java, Kotlin, Spring Boot — and the modern web — TypeScript and React. Now leaning deep into modern AI-driven engineering — building Graph RAG knowledge platforms, MCP tooling, and agent skill pipelines that put full codebase context at an AI agent\'s fingertips. Oracle Certified Professional Java SE 11 Developer, Certified Kubernetes Application Developer and Administrator, and AWS Certified Solutions Architect Professional. Pragmatic, delivery-focused, and a vibe coding lover at heart.';
 
 export const EXPERIENCES: Experience[] = [
   {
